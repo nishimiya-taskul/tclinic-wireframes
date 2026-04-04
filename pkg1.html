@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>韓国陶器肌フルコース | Tクリニック</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--white:#fff;--pearl:#fafafa;--light:#f5f5f5;--gold:#b8943f;--gold-dark:#9a7a2e;--text:#111;--text-mid:#333;--text-sub:#555;--text-light:#888;--border:rgba(0,0,0,.1)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--white);color:var(--text);line-height:1.8;max-width:430px;margin:0 auto;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.header{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.header-logo{font-size:16px;font-weight:600;color:var(--gold-dark);letter-spacing:1px}
+.header-cta{background:var(--gold);color:#fff;font-size:11px;font-weight:700;padding:8px 18px;border-radius:8px;text-decoration:none}
+.img-slot{width:100%;overflow:hidden;background:linear-gradient(135deg,#f3efe9,#eae4db);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text-light);font-size:11px;text-align:center;padding:20px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--gold);color:#fff;font-size:15px;font-weight:700;padding:18px;border-radius:10px;text-decoration:none;box-shadow:0 4px 20px rgba(196,169,125,.25)}
+.btn::after{content:'→';font-size:14px}
+.sec{padding:40px 24px}
+.sec-pearl{background:#fff}
+.sec-light{background:#f9f9f9}
+.sec-title{font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;line-height:1.6;margin-bottom:16px;color:#111}
+.sec-text{font-size:15px;color:var(--text-mid);line-height:2;margin-bottom:24px}
+.sec-note{font-size:12px;color:var(--text-light);text-align:center;margin-top:8px}
+.fv{padding:0 0 36px}
+.fv-body{padding:24px 24px 0}
+.fv-headline{font-family:'Noto Serif JP',serif;font-size:26px;font-weight:700;line-height:1.6;margin-bottom:14px;color:#111}
+.fv-headline em{font-style:normal;color:var(--gold-dark)}
+.fv-sub{font-size:15px;color:var(--text-mid);line-height:2;margin-bottom:24px}
+.fv-note{text-align:center;font-size:12px;color:var(--text-light);margin-top:10px}
+.aspire-grid{display:flex;flex-direction:column;gap:12px;margin:20px 0}
+.aspire-item{display:flex;gap:14px;align-items:center;background:var(--pearl);border-radius:14px;overflow:hidden;border:1px solid var(--border)}
+.aspire-img{width:110px;min-height:110px;flex-shrink:0;background:linear-gradient(135deg,#f0ebe4,#e8e2d8);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--text-light);text-align:center;padding:8px}
+.aspire-text{padding:14px 14px 14px 0}
+.aspire-label{font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;margin-bottom:2px;color:#111}
+.aspire-desc{font-size:13px;color:var(--text-sub);line-height:1.7}
+.ba-card{background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:14px;overflow:hidden;margin-bottom:16px}
+.ba-images{display:grid;grid-template-columns:1fr 1fr}
+.ba-img{min-height:170px;background:linear-gradient(135deg,#f0ebe4,#e6dfd5);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px;color:var(--text-light);text-align:center;padding:12px}
+.ba-img:first-child{border-right:1px solid var(--border)}
+.ba-img-label{font-size:10px;font-weight:700;color:var(--gold-dark);background:rgba(255,255,255,.8);padding:3px 10px;border-radius:100px;margin-bottom:4px}
+.ba-info{padding:16px 18px}
+.ba-profile{font-size:14px;font-weight:600;margin-bottom:4px}
+.ba-detail{font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:8px}
+.ba-scores{display:flex;gap:6px;flex-wrap:wrap}
+.ba-score{font-size:11px;font-weight:600;color:var(--gold-dark);background:rgba(196,169,125,.08);padding:4px 10px;border-radius:100px}
+.ba-voice{margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:14px;color:var(--text-mid);line-height:1.8}
+.plan-card{background:var(--white);border:2px solid var(--gold);border-radius:16px;overflow:hidden;margin:24px 0}
+.plan-header{background:linear-gradient(135deg,var(--gold),var(--gold-dark));padding:16px 20px;color:#fff}
+.plan-header h3{font-family:'Noto Serif JP',serif;font-size:17px;font-weight:600;margin-bottom:2px}
+.plan-header p{font-size:12px;opacity:.85}
+.plan-body{padding:20px}
+.plan-step{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text-mid);line-height:1.7}
+.plan-step:last-child{border:none}
+.plan-step-num{font-size:12px;font-weight:700;color:var(--gold-dark);background:rgba(196,169,125,.1);width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.plan-step strong{color:var(--text)}
+.plan-price{text-align:center;padding:16px 20px;border-top:1px solid var(--border);background:var(--pearl)}
+.plan-price .price{font-family:'Noto Serif JP',serif;font-size:28px;font-weight:600;color:var(--gold-dark)}
+.plan-price .price span{font-size:14px;font-weight:400}
+.plan-price .note{font-size:12px;color:var(--text-light);margin-top:4px}
+.flow-item{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--border)}
+.flow-item:last-child{border:none}
+.flow-num{width:32px;height:32px;flex-shrink:0;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--gold-dark)}
+.flow-body h4{font-size:15px;font-weight:600;margin-bottom:2px}
+.flow-body p{font-size:13px;color:var(--text-sub);line-height:1.8}
+.doctor{border-radius:14px;overflow:hidden;border:1px solid var(--border)}
+.doctor-photo{min-height:220px;background:linear-gradient(180deg,#f0ebe4,#e8e2d8);display:flex;align-items:center;justify-content:center;color:var(--text-light);font-size:12px}
+.doctor-info{padding:20px}
+.doctor-name{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:600;margin-bottom:2px}
+.doctor-title{font-size:13px;color:var(--text-sub);margin-bottom:10px}
+.doctor-bio{font-size:13px;color:var(--text-sub);line-height:2}
+.doctor-msg{margin-top:12px;padding-top:12px;border-top:1px solid var(--border);font-size:14px;color:var(--text-mid);line-height:1.8}
+.trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 0}
+.trust-item{background:var(--pearl);border:1px solid var(--border);border-radius:10px;padding:16px 12px;text-align:center}
+.trust-label{font-size:14px;font-weight:700;margin-bottom:2px}
+.trust-desc{font-size:11px;color:var(--text-sub)}
+.faq-item{padding:16px 0;border-bottom:1px solid var(--border)}
+.faq-q{font-size:15px;font-weight:600;line-height:1.6}
+.faq-a{font-size:14px;color:var(--text-sub);line-height:1.9;margin-top:6px}
+.cta-sec{padding:40px 24px;text-align:center;background:var(--light)}
+.cta-title{font-family:'Noto Serif JP',serif;font-size:21px;font-weight:600;line-height:1.7;margin-bottom:12px}
+.cta-desc{font-size:14px;color:var(--text-sub);line-height:2;margin-bottom:24px}
+.cta-badges{display:flex;justify-content:center;gap:6px;margin-top:12px;flex-wrap:wrap}
+.cta-badge{font-size:11px;font-weight:600;color:var(--gold-dark);background:#fff;padding:4px 12px;border-radius:100px;border:1px solid var(--border)}
+.fixed-cta{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:99;background:rgba(255,255,255,.96);border-top:1px solid var(--border);padding:10px 20px 14px;display:flex;gap:10px}
+.fixed-cta-main{flex:1;display:flex;align-items:center;justify-content:center;background:var(--gold);color:#fff;font-size:14px;font-weight:700;padding:14px;border-radius:10px;text-decoration:none}
+.fixed-cta-tel{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border:2px solid var(--gold);color:var(--gold);border-radius:50%;text-decoration:none;font-size:16px;flex-shrink:0}
+.footer{padding:20px 24px 100px;text-align:center;font-size:11px;color:var(--text-light);line-height:2}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-logo">T CLINIC</div>
+  <a href="#cta" class="header-cta">無料診断を予約</a>
+</header>
+
+<!-- FV -->
+<section class="fv">
+  <div class="img-slot" style="min-height:240px;padding-top:70px;">
+    水光肌の女性。ツヤ・透明感。<br>ノーファンデのすっぴん美肌。自然光。
+  </div>
+  <div class="fv-body">
+    <h1 class="fv-headline">
+      <em>ノーファンデ</em>で過ごせる肌へ。<br>
+      あなた専用の美肌プランを、<br>
+      専門医が設計。
+    </h1>
+    <p class="fv-sub">
+      VISIA肌診断 × あなたのライフスタイルから、<br>
+      専門医がオリジナルプランを設計。
+    </p>
+    <a href="#cta" class="btn">無料パーソナル診断を予約する</a>
+    <p class="fv-note">VISIA肌診断（通常¥5,000）+ プラン設計<br><strong style="color:var(--gold-dark);">初めての方限定 無料</strong></p>
+  </div>
+</section>
+
+<!-- Goals -->
+<section class="sec sec-pearl">
+  <h2 class="sec-title">Tクリニックの美容医療だから<br>叶う肌がある。</h2>
+  <div class="aspire-grid">
+    <div class="aspire-item">
+      <div class="aspire-img">毛穴が見えない<br>滑らかな頬。</div>
+      <div class="aspire-text"><div class="aspire-label">毛穴レス</div><div class="aspire-desc">至近距離でも自信が持てる、つるんとした素肌。</div></div>
+    </div>
+    <div class="aspire-item">
+      <div class="aspire-img">内側から発光する<br>水光肌。</div>
+      <div class="aspire-text"><div class="aspire-label">水光肌</div><div class="aspire-desc">内側からにじみ出るようなうるおいとツヤ。</div></div>
+    </div>
+    <div class="aspire-item">
+      <div class="aspire-img">もちもち弾力が<br>伝わるカット。</div>
+      <div class="aspire-text"><div class="aspire-label">もちもち肌</div><div class="aspire-desc">思わず触りたくなるハリと弾力。</div></div>
+    </div>
+    <div class="aspire-item">
+      <div class="aspire-img">トーン均一で<br>明るい横顔。</div>
+      <div class="aspire-text"><div class="aspire-label">透明感</div><div class="aspire-desc">くすみのない、パッと明るいクリアな肌。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- B/A -->
+<section class="sec">
+  <h2 class="sec-title">実際に、ここまで変わる。</h2>
+
+  <div class="ba-card">
+    <div class="ba-images">
+      <div class="ba-img"><div class="ba-img-label">BEFORE</div>毛穴の黒ずみ。<br>くすみ。</div>
+      <div class="ba-img"><div class="ba-img-label">AFTER</div>毛穴レス。<br>透明感のあるツヤ肌。</div>
+    </div>
+    <div class="ba-info">
+      <div class="ba-profile">26歳 / たるみ毛穴・隠れジミ多数</div>
+      <div class="ba-detail"><strong style="color:var(--gold-dark);">VISIA所見：</strong>黒ずみの原因は産毛。通常ピーリングでは改善しないタイプ。<br><strong style="color:var(--gold-dark);">プラン：</strong>顔脱毛 → ハイドラ → ポテンツァ×ジュベルック → ケアシス+VC</div>
+      <div class="ba-scores"><span class="ba-score">毛穴 86→41</span><span class="ba-score">肌年齢 31→24歳</span></div>
+      <div class="ba-voice">「"ほんとにノーファンデ!?"って褒められるようになった。」</div>
+    </div>
+  </div>
+
+  <div class="ba-card">
+    <div class="ba-images">
+      <div class="ba-img"><div class="ba-img-label">BEFORE</div>くすみ・色ムラ。</div>
+      <div class="ba-img"><div class="ba-img-label">AFTER</div>透明感。均一トーン。</div>
+    </div>
+    <div class="ba-info">
+      <div class="ba-profile">31歳 / 隠れ肝斑・シミ24個</div>
+      <div class="ba-detail"><strong style="color:var(--gold-dark);">VISIA所見：</strong>シミに見えたものがUV撮影で隠れ肝斑。通常レーザー禁忌。<br><strong style="color:var(--gold-dark);">プラン：</strong>ラヴィピール → エリシスセンス×マックーム → ケアシス+トラネキサム酸</div>
+      <div class="ba-scores"><span class="ba-score">シミ 24→11</span><span class="ba-score">隠れジミ 38→19</span></div>
+      <div class="ba-voice">「友達に"何かした？肌変わった"って聞かれて、内心ガッツポーズ。」</div>
+    </div>
+  </div>
+
+  <div class="ba-card">
+    <div class="ba-images">
+      <div class="ba-img"><div class="ba-img-label">BEFORE</div>開き毛穴。<br>キメが粗い。</div>
+      <div class="ba-img"><div class="ba-img-label">AFTER</div>水光ツヤ。<br>もちもち肌。</div>
+    </div>
+    <div class="ba-info">
+      <div class="ba-profile">28歳 / すり鉢毛穴・肌年齢34歳</div>
+      <div class="ba-detail"><strong style="color:var(--gold-dark);">VISIA所見：</strong>構造的な開き毛穴。洗浄だけでは改善しない。<br><strong style="color:var(--gold-dark);">プラン：</strong>ポテンツァ×ジュベルック → ケアシス鎮静</div>
+      <div class="ba-scores"><span class="ba-score">キメ 下位25%→上位40%</span><span class="ba-score">肌年齢 34→26歳</span></div>
+      <div class="ba-voice">「彼に"肌もちもちだね"って言われて、やってよかった。」</div>
+    </div>
+  </div>
+
+  <p class="sec-note">※ 効果には個人差があります</p>
+</section>
+
+<!-- VISIA -->
+<section class="sec sec-light">
+  <h2 class="sec-title">ただの診察じゃない。<br>VISIA肌診断とは。</h2>
+
+  <div class="img-slot" style="min-height:180px;border-radius:10px;margin-bottom:20px;">
+    VISIA診断を受けている女性。<br>画面に肌データが映っている。
+  </div>
+
+  <p class="sec-text" style="margin-bottom:16px;">
+    世界10万人以上のデータベースと比較し、<br>
+    あなたの肌を8項目で数値化する<br>
+    医療レベルの肌解析システムです。
+  </p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;">
+    <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+      <div style="font-size:14px;font-weight:700;color:var(--gold-dark);margin-bottom:2px;">毛穴の数・種類</div>
+      <div style="font-size:12px;color:var(--text-sub);">詰まり/開き/たるみ<br>タイプまで判別</div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+      <div style="font-size:14px;font-weight:700;color:var(--gold-dark);margin-bottom:2px;">シミ・隠れジミ</div>
+      <div style="font-size:12px;color:var(--text-sub);">肉眼で見えない<br>将来のシミ予備軍も</div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+      <div style="font-size:14px;font-weight:700;color:var(--gold-dark);margin-bottom:2px;">肌年齢</div>
+      <div style="font-size:12px;color:var(--text-sub);">同年代と比較した<br>あなたの肌の現在地</div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+      <div style="font-size:14px;font-weight:700;color:var(--gold-dark);margin-bottom:2px;">赤みの原因</div>
+      <div style="font-size:12px;color:var(--text-sub);">メラニンか血管か<br>原因を分離特定</div>
+    </div>
+  </div>
+
+  <p style="font-size:14px;color:var(--text-mid);text-align:center;line-height:1.9;">
+    <strong>目で見てもわからないことが、<br>数値でわかる。</strong><br>
+    だから最適な施術が選べる。
+  </p>
+</section>
+
+<!-- プラン例 -->
+<section class="sec sec-pearl">
+  <h2 class="sec-title">こんなプランを、あなた専用に設計。</h2>
+  <p class="sec-text">
+    例えばこんなお悩みの方には、<br>
+    こんな組み合わせと順番が最適です。
+  </p>
+
+  <div class="plan-card">
+    <div class="plan-header">
+      <h3>完全ノーファンデ！韓国陶器肌フルコース</h3>
+      <p>20〜30代 / 毛穴の黒ずみ・開き・くすみが気になる方</p>
+    </div>
+    <div class="plan-body">
+      <div class="plan-step">
+        <div class="plan-step-num">1</div>
+        <div><strong>VISIA肌診断</strong><br>隠れジミ・毛穴の数を可視化</div>
+      </div>
+      <div class="plan-step">
+        <div class="plan-step-num">2</div>
+        <div><strong>顔の医療脱毛</strong><br>実は産毛が毛穴を目立たせている。脱毛でトーンUP効果も</div>
+      </div>
+      <div class="plan-step">
+        <div class="plan-step-num">3</div>
+        <div><strong>ラヴィピール or ハイドラフェイシャル</strong><br>古い角質と毛穴の汚れを徹底洗浄</div>
+      </div>
+      <div class="plan-step">
+        <div class="plan-step-num">4</div>
+        <div><strong>ポテンツァ + ジュベルック導入</strong><br>綺麗になった毛穴を引き締め、コラーゲンを爆増させる</div>
+      </div>
+      <div class="plan-step">
+        <div class="plan-step-num">5</div>
+        <div><strong>ケアシス（エレクトロポレーション）</strong><br>鎮静+高保湿。ビタミンCやトラネキサム酸を浸透</div>
+      </div>
+    </div>
+    <div class="plan-price">
+      <div class="price"><span>月々 </span>¥14,500<span>〜</span></div>
+      <div class="note">※ 総額¥348,000〜 / 分割24回の場合 / 内容により変動</div>
+    </div>
+  </div>
+
+  <p style="font-size:14px;color:var(--text-mid);text-align:center;line-height:1.9;">
+    汚れを取る → 産毛をなくす →<br>
+    毛穴を引き締める → 栄養を入れる。<br>
+    <strong>この順番だから、効く。</strong>
+  </p>
+</section>
+
+<!-- What + Flow -->
+<section class="sec">
+  <h2 class="sec-title">VISIA肌診断 × ライフスタイル。<br>あなただけのプランを、<br>専門医が設計。</h2>
+
+  <div class="flow-item">
+    <div class="flow-num">1</div>
+    <div class="flow-body">
+      <h4>VISIA肌診断</h4>
+      <p>毛穴の数・種類、シミ、隠れジミ、赤みの原因まで8項目を数値化。</p>
+    </div>
+  </div>
+  <div class="flow-item">
+    <div class="flow-num">2</div>
+    <div class="flow-body">
+      <h4>専門医がオリジナルプランを設計</h4>
+      <p>肌データ + なりたい肌 + DT許容度 + 痛み耐性 + 予算。すべて踏まえて最適な組み合わせを設計。</p>
+    </div>
+  </div>
+  <div class="flow-item">
+    <div class="flow-num">3</div>
+    <div class="flow-body">
+      <h4>オリジナルプランをプレゼント</h4>
+      <p>内容・順番・スケジュール・費用をすべて記載。持ち帰りOK。</p>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;padding:18px;background:var(--pearl);border-radius:10px;text-align:center;">
+    <p style="font-size:13px;color:var(--text-sub);">通常¥5,000のVISIA肌診断 + プラン設計</p>
+    <p style="font-family:'Noto Serif JP',serif;font-size:24px;font-weight:600;color:var(--gold-dark);">初めての方限定、<span style="font-size:28px;">無料</span></p>
+    <p style="font-size:12px;color:var(--text-light);">約30分 / その場で決める必要なし</p>
+  </div>
+</section>
+
+<!-- Doctor -->
+<section class="sec sec-pearl">
+  <h2 class="sec-title">症例○,○○○件以上の専門医が、<br>あなたのプランを設計。</h2>
+  <div class="doctor">
+    <div class="doctor-photo">※ 医師写真</div>
+    <div class="doctor-info">
+      <div class="doctor-name">※ 医師名</div>
+      <div class="doctor-title">Tクリニック 院長 / 皮膚科専門医</div>
+      <div class="doctor-bio">○○大学医学部卒業<br>美容皮膚科 症例○,○○○件以上</div>
+      <div class="doctor-msg">「あなたのなりたい肌に、最短で届くプランを一緒に考えます。」</div>
+    </div>
+  </div>
+</section>
+
+<!-- Promise -->
+<section class="sec">
+  <h2 class="sec-title">安心してお越しください。</h2>
+  <div class="trust-grid">
+    <div class="trust-item"><div class="trust-label">初回限定 無料</div><div class="trust-desc">通常¥5,000の診断+プラン</div></div>
+    <div class="trust-item"><div class="trust-label">無理な勧誘なし</div><div class="trust-desc">必要な提案のみ</div></div>
+    <div class="trust-item"><div class="trust-label">持ち帰りOK</div><div class="trust-desc">自宅でじっくり検討</div></div>
+    <div class="trust-item"><div class="trust-label">当日施術もOK</div><div class="trust-desc">ご希望があれば</div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sec-pearl">
+  <h2 class="sec-title">よくあるご質問</h2>
+  <div class="faq-item">
+    <div class="faq-q">診断だけ受けて帰っても大丈夫？</div>
+    <div class="faq-a">もちろんです。プランを持ち帰ってゆっくり検討してください。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">痛みやダウンタイムが心配です</div>
+    <div class="faq-a">痛み耐性・DT許容度もヒアリングして、あなたに合った強度でプランを組みます。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">費用はどのくらい？</div>
+    <div class="faq-a">プランにすべて明記します。不透明な追加費用はありません。</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec" id="cta">
+  <h2 class="cta-title">ノーファンデで過ごせる肌、<br>ここから始まる。</h2>
+  <p class="cta-desc">
+    通常¥5,000のVISIA診断 + プラン設計。<br>
+    <strong style="color:var(--gold-dark);">初めての方は、すべて無料。</strong>
+  </p>
+  <a href="#" class="btn">無料パーソナル診断を予約する</a>
+  <div class="cta-badges"><span class="cta-badge">無料</span><span class="cta-badge">勧誘なし</span><span class="cta-badge">約30分</span><span class="cta-badge">持ち帰りOK</span></div>
+</section>
+
+<footer class="footer">T CLINIC<br>※ 効果には個人差があります</footer>
+<div class="fixed-cta">
+  <a href="#cta" class="fixed-cta-main">無料パーソナル診断を予約</a>
+  <a href="tel:0000000000" class="fixed-cta-tel">&#9742;</a>
+</div>
+</body>
+</html>

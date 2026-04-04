@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tクリニック LP戦略リサーチレポート</title>
+<style>
+  :root {
+    --bg: #fafaf8;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --sub: #666;
+    --accent: #2d2d2d;
+    --border: #e8e6e3;
+    --highlight: #f5f0eb;
+    --tag-bg: #f0ede8;
+    --green: #2d6a4f;
+    --green-bg: #e9f5ef;
+    --orange: #b8651a;
+    --orange-bg: #fef3e7;
+    --red: #a8321f;
+    --red-bg: #fdecea;
+    --blue: #1a5276;
+    --blue-bg: #e8f0f8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 14px;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* Header */
+  .report-header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+  .report-header .label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--sub);
+    margin-bottom: 16px;
+  }
+  .report-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+  .report-header .subtitle {
+    font-size: 15px;
+    color: var(--sub);
+  }
+  .report-header .meta {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #999;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 56px;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+  }
+  .section-desc {
+    color: var(--sub);
+    font-size: 13px;
+    margin-bottom: 24px;
+    margin-top: 8px;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+  .card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .card p {
+    color: var(--sub);
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  /* Treatment Table */
+  .treatment-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  .treatment-table th {
+    background: var(--accent);
+    color: #fff;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .treatment-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .treatment-table tr:hover td {
+    background: var(--highlight);
+  }
+
+  /* Tags */
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 4px;
+  }
+  .tag-hot { background: var(--red-bg); color: var(--red); }
+  .tag-rising { background: var(--orange-bg); color: var(--orange); }
+  .tag-stable { background: var(--green-bg); color: var(--green); }
+  .tag-low { background: var(--tag-bg); color: var(--sub); }
+  .tag-blue { background: var(--blue-bg); color: var(--blue); }
+
+  /* Stars */
+  .stars { color: #d4a017; font-size: 14px; letter-spacing: 1px; }
+
+  /* Review Box */
+  .review-box {
+    background: var(--highlight);
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    margin: 12px 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .review-box .source {
+    font-size: 11px;
+    color: #999;
+    margin-top: 6px;
+  }
+
+  /* Stats Grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+  }
+  .stat-card .number {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+  .stat-card .label {
+    font-size: 11px;
+    color: var(--sub);
+  }
+
+  /* Concept Section */
+  .concept-box {
+    background: linear-gradient(135deg, #f8f6f3 0%, #f0ede8 100%);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    margin: 24px 0;
+  }
+  .concept-box h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  /* Flow */
+  .flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin: 24px 0;
+    flex-wrap: wrap;
+  }
+  .flow-step {
+    flex: 1;
+    min-width: 140px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 20px 16px;
+    text-align: center;
+    position: relative;
+  }
+  .flow-step:first-child { border-radius: 8px 0 0 8px; }
+  .flow-step:last-child { border-radius: 0 8px 8px 0; }
+  .flow-step .step-num {
+    font-size: 11px;
+    color: var(--sub);
+    margin-bottom: 8px;
+  }
+  .flow-step .step-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .flow-step .step-desc {
+    font-size: 11px;
+    color: var(--sub);
+  }
+  .flow-arrow {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #ccc;
+    padding: 0 4px;
+  }
+
+  /* Comparison Table */
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+  @media (max-width: 768px) {
+    .comparison-grid { grid-template-columns: 1fr; }
+    .flow { flex-direction: column; }
+    .flow-step { border-radius: 0 !important; }
+    .flow-step:first-child { border-radius: 8px 8px 0 0 !important; }
+    .flow-step:last-child { border-radius: 0 0 8px 8px !important; }
+    .flow-arrow { justify-content: center; transform: rotate(90deg); }
+  }
+
+  .pkg-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+  }
+  .pkg-card h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .pkg-card .target {
+    font-size: 12px;
+    color: var(--sub);
+    margin-bottom: 16px;
+  }
+
+  /* List Styles */
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+  .check-list li {
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 13px;
+  }
+  .check-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--sub);
+  }
+
+  /* Insight Box */
+  .insight {
+    background: var(--blue-bg);
+    border: 1px solid #c5d9eb;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+  .insight strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--blue);
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  /* Warning Box */
+  .warning {
+    background: var(--orange-bg);
+    border: 1px solid #e6c9a8;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+  .warning strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--orange);
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  /* Price Table */
+  .price-estimate {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 16px 0;
+  }
+  .price-estimate .pe-header {
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .price-estimate .pe-body {
+    padding: 16px;
+  }
+  .price-estimate table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .price-estimate td, .price-estimate th {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+  }
+  .price-estimate th {
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--sub);
+  }
+  .price-estimate .total-row td {
+    font-weight: 800;
+    font-size: 15px;
+    border-top: 2px solid var(--accent);
+    border-bottom: none;
+    padding-top: 12px;
+  }
+
+  /* Persona Card */
+  .persona-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+  .persona-card .persona-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--sub);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .persona-card h4 {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  .persona-card .detail {
+    font-size: 13px;
+    color: var(--sub);
+    line-height: 1.9;
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 32px;
+    margin-bottom: 48px;
+  }
+  .toc h2 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--sub);
+    letter-spacing: 1px;
+  }
+  .toc ol {
+    padding-left: 20px;
+  }
+  .toc li {
+    padding: 4px 0;
+    font-size: 13px;
+  }
+  .toc a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .toc a:hover { border-color: var(--accent); }
+
+  /* Subsection */
+  .subsection {
+    margin-top: 32px;
+    margin-bottom: 24px;
+  }
+  .subsection h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  /* HR */
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 40px 0;
+  }
+
+  /* Voice Grid */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  @media (max-width: 768px) {
+    .voice-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Strategy Block */
+  .strategy-block {
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 24px 0;
+  }
+  .strategy-block h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .strategy-block .point {
+    margin-bottom: 16px;
+  }
+  .strategy-block .point-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .strategy-block .point-body {
+    font-size: 13px;
+    color: var(--sub);
+  }
+
+  /* AB Groups */
+  .group-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+  }
+  @media (max-width: 768px) {
+    .group-grid { grid-template-columns: 1fr; }
+  }
+  .group-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  .group-box h4 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .group-box ul {
+    list-style: none;
+    padding: 0;
+    font-size: 12px;
+    color: var(--sub);
+  }
+  .group-box ul li { padding: 3px 0; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- ======================== HEADER ======================== -->
+<header class="report-header">
+  <div class="label">Research Report</div>
+  <h1>Tクリニック 美肌パッケージLP<br>市場調査 &amp; 攻め方戦略</h1>
+  <div class="subtitle">トリビュー・カンナムオンニ・ホットペッパー等の口コミデータを基にした徹底リサーチ</div>
+  <div class="meta">2026年4月4日作成 / LP2本（韓国陶器肌・クレーター撲滅）</div>
+</header>
+
+<!-- ======================== TOC ======================== -->
+<nav class="toc">
+  <h2>CONTENTS</h2>
+  <ol>
+    <li><a href="#visia-deep">VISIA肌診断の深掘り — なぜ診断が施術選定に不可欠なのか</a></li>
+    <li><a href="#popularity">施術別 人気度・口コミランキング</a></li>
+    <li><a href="#reviews">リアルな口コミ（成功事例・セットメニュー評価）</a></li>
+    <li><a href="#pricing">価格相場 &amp; パッケージ試算</a></li>
+    <li><a href="#market">市場トレンド &amp; ターゲット分析</a></li>
+    <li><a href="#concept">LP攻め方 &amp; コンセプト設計</a></li>
+    <li><a href="#wireframe">ワイヤー構成案（2本分）</a></li>
+  </ol>
+</nav>
+
+
+<!-- ======================== 0. VISIA深掘り ======================== -->
+<section class="section" id="visia-deep">
+  <h2 class="section-title">0. VISIA肌診断の深掘り — なぜ診断が施術選定に不可欠なのか</h2>
+  <p class="section-desc">「診断なしに施術を選ぶ」ことがいかに危険か。VISIAが数値化する8項目と、それぞれの数値が示す「あなたに必要な施術」の対応関係</p>
+
+  <div class="concept-box">
+    <h3>VISIAが数値化する8つの肌指標</h3>
+    <p style="font-size:13px;color:var(--sub);margin-bottom:16px;">
+      VISIAは世界109,300人（うち日本人11,000人）のデータベースと比較し、同世代平均を50%として各項目をスコアリングする。<br>
+      「あなたの毛穴は同年代の上位30%に悪い」のような客観データが出る。これが「なんとなく」ではなく「数値に基づく処方」の根拠になる。
+    </p>
+
+    <table class="treatment-table">
+      <thead>
+        <tr><th>測定項目</th><th>何がわかるか</th><th>この数値が悪いとき → 必要な施術</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>シミ</strong></td>
+          <td>肌表面の色素沈着。肉眼で見えにくい薄いシミ・そばかすまで検出</td>
+          <td>光治療（IPL）、レーザートーニング、ビタミンC導入</td>
+        </tr>
+        <tr>
+          <td><strong>隠れジミ（UV）</strong></td>
+          <td>まだ肌表面に出ていない紫外線ダメージ。将来のシミ予備軍</td>
+          <td>予防的ケア：トラネキサム酸内服、ピーリング、ケアシス（VC導入）</td>
+        </tr>
+        <tr>
+          <td><strong>毛穴</strong></td>
+          <td>毛穴の数・大きさ・形状。周辺皮膚との陰影差で判別</td>
+          <td>タイプ別に大きく異なる（下記の毛穴タイプ別参照）</td>
+        </tr>
+        <tr>
+          <td><strong>シワ</strong></td>
+          <td>表情じわ・静止じわの深さ・長さ・位置</td>
+          <td>ポテンツァ、ジュベルック（コラーゲン生成促進）</td>
+        </tr>
+        <tr>
+          <td><strong>キメ（テクスチャ）</strong></td>
+          <td>肌表面のなめらかさ・凹凸。キメの乱れや粗さ</td>
+          <td>ピーリング、ハイドラフェイシャル、フラクショナルレーザー</td>
+        </tr>
+        <tr>
+          <td><strong>赤み・色ムラ</strong></td>
+          <td>毛細血管拡張、慢性的な炎症、酒さ傾向をクロス偏光撮影で可視化</td>
+          <td>IPL、ポテンツァ（赤みモード）、内服薬</td>
+        </tr>
+        <tr>
+          <td><strong>ポルフィリン</strong></td>
+          <td>アクネ菌の代謝物を検出。皮脂分泌やニキビリスクを数値化</td>
+          <td>ハイドラフェイシャル（毛穴洗浄）、ケミカルピーリング、抗菌治療</td>
+        </tr>
+        <tr>
+          <td><strong>メラニン / ヘモグロビン</strong></td>
+          <td>メラニンとヘモグロビンを分離画像化。色ムラの原因を特定</td>
+          <td>メラニン系 → 美白治療 / ヘモグロビン系 → 赤み治療（全く違うアプローチ）</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warning">
+    <strong>診断なしの施術選択が危険な理由 — 肝斑の例</strong>
+    肝斑は見た目がシミに似ているが、原因が全く違う（表皮と真皮の境界部分の損傷）。<br>
+    <strong>通常のシミ治療に使う高出力レーザーを肝斑に当てると、治療前よりも色が濃くなる（悪化する）。</strong>これは医学的に禁忌とされている。<br>
+    肝斑の治療にはトラネキサム酸の内服 + ポテンツァ or フォトフェイシャルによる低侵襲アプローチが必要。<br><br>
+    つまり「シミっぽいから○○」という自己判断やメニュー選択は、間違った施術で悪化させるリスクがある。<br>
+    <strong>VISIAで「それがシミなのか肝斑なのか」を正確に判別してから施術を決めることが、安全かつ最短のルート。</strong><br>
+    <span style="font-size:12px;color:#999;">出典: <a href="https://www.yamate-clinic.com/simi3.html" style="color:#999;">山手皮膚科クリニック</a> / <a href="https://takamiclinic.or.jp/service/pigmented/kanpan/" style="color:#999;">タカミクリニック 肝斑治療</a></span>
+  </div>
+
+  <div class="subsection">
+    <h3>毛穴だけでも4タイプ — タイプを間違えると施術が効かない</h3>
+    <p style="font-size:13px;color:var(--sub);margin-bottom:16px;">
+      「毛穴が気になる」と言っても、原因とタイプで必要な施術は全く異なる。VISIAの毛穴スコア + 医師の視診で正確にタイプを判別し、適切な施術を選定する。
+    </p>
+
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">
+      <div class="group-box">
+        <h4>詰まり毛穴（白い角栓）</h4>
+        <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">
+          <strong>原因</strong>：皮脂+古い角質が毛穴に詰まり、角栓が形成<br>
+          <strong>VISIA所見</strong>：毛穴数多め、ポルフィリン値高め
+        </p>
+        <ul>
+          <li>→ <strong>ハイドラフェイシャル</strong>（水流で角栓除去）</li>
+          <li>→ <strong>ケミカルピーリング / ラヴィピール</strong>（角質溶解）</li>
+          <li>→ <strong>ケアシス</strong>（ビタミンC導入で皮脂抑制）</li>
+        </ul>
+        <p style="font-size:11px;color:#999;margin-top:8px;">※ ポテンツァ単体では詰まりは取れない。前処置としてハイドラが必須</p>
+      </div>
+      <div class="group-box">
+        <h4>黒ずみ毛穴（酸化・メラニン）</h4>
+        <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">
+          <strong>原因</strong>：角栓の酸化 or メラニン色素の沈着（2パターンある）<br>
+          <strong>VISIA所見</strong>：毛穴スコア低+メラニン分離画像で判別
+        </p>
+        <ul>
+          <li>→ 酸化型：<strong>ハイドラフェイシャル</strong> + <strong>顔脱毛</strong>（産毛除去でトーンUP）</li>
+          <li>→ メラニン型：<strong>ラヴィピール</strong>（メラニン対策）+ <strong>ケアシス</strong>（トラネキサム酸導入）</li>
+        </ul>
+        <p style="font-size:11px;color:#999;margin-top:8px;">※ 汚れを取っても消えない黒ずみはメラニン沈着。原因の判別が重要</p>
+      </div>
+      <div class="group-box">
+        <h4>開き毛穴・すり鉢毛穴</h4>
+        <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">
+          <strong>原因</strong>：皮脂過剰分泌で毛穴が押し広げられた状態。すり鉢型は出口がクレーター状に凹む<br>
+          <strong>VISIA所見</strong>：毛穴の陰影が深い、テクスチャスコア低
+        </p>
+        <ul>
+          <li>→ <strong>ポテンツァ</strong>（RF引き締め、コラーゲン再構築）</li>
+          <li>→ <strong>ジュベルック</strong>（PLLA+HAでコラーゲン生成促進）</li>
+          <li>→ 重度：<strong>CO2フラクショナルレーザー</strong>（肌の再構築）</li>
+        </ul>
+        <p style="font-size:11px;color:#999;margin-top:8px;">※ ポテンツァ+ジュベルックの鉄板コンビはこのタイプに最も効く</p>
+      </div>
+      <div class="group-box">
+        <h4>たるみ毛穴（加齢・弾力低下）</h4>
+        <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">
+          <strong>原因</strong>：コラーゲン・エラスチン減少で肌がたるみ、毛穴が楕円形に伸びる。毛穴同士がつながって見えることも<br>
+          <strong>VISIA所見</strong>：シワスコア悪化+毛穴の形状が縦長
+        </p>
+        <ul>
+          <li>→ <strong>ポテンツァ</strong>（真皮のコラーゲン再生）</li>
+          <li>→ <strong>ジュベルック</strong>（長期的な弾力回復）</li>
+          <li>→ <strong>HIFU / 糸リフト</strong>（たるみそのものへのアプローチ）</li>
+        </ul>
+        <p style="font-size:11px;color:#999;margin-top:8px;">※ 毛穴洗浄だけでは絶対に改善しないタイプ。引き締め+弾力回復が必須</p>
+      </div>
+    </div>
+
+    <div class="insight">
+      <strong>核心：「毛穴が気になる」の一言に、4つの全く違う正解がある</strong>
+      詰まり毛穴にポテンツァをやっても効果は薄い。たるみ毛穴にハイドラフェイシャルをやっても意味がない。<br>
+      <strong>VISIAで毛穴のタイプ・深さ・数を数値化し、メラニン/ヘモグロビンの分離画像で原因を特定してから、初めて「あなたに最適な施術」が決まる。</strong><br>
+      これが「なんとなく人気の施術を受ける」のと「診断に基づくオーダーメイド」の決定的な違い。<br><br>
+      <span style="font-size:12px;">
+        出典: <a href="https://www.osaka-houreisen.jp/pores/" style="color:var(--blue);">大阪ほうれい線 毛穴タイプ解説</a> /
+        <a href="https://www.hibiya-skin.com/column/202209_02.html" style="color:var(--blue);">日比谷ヒフ科 すり鉢毛穴</a> /
+        <a href="https://takamiclinic.or.jp/service/pore/kind/" style="color:var(--blue);">タカミクリニック 毛穴の種類</a> /
+        <a href="https://nagaseclinic.com/potenza-hydrafacia/" style="color:var(--blue);">La Clinique ポテンツァ×ハイドラ使い分け</a>
+      </span>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>診断→処方の具体例：同じ「毛穴が気になる」でもこう変わる</h3>
+    <div class="comparison-grid">
+      <div class="card">
+        <h3>Case A：28歳女性</h3>
+        <p><strong>VISIA結果</strong>：毛穴スコア 35%（平均以下）/ ポルフィリン 72%（高い）/ メラニン 45%（正常）/ 隠れジミ 28%（少なめ）</p>
+        <p><strong>医師の判断</strong>：詰まり+皮脂過剰型。アクネ菌活発。まず汚れを取り、皮脂コントロールしてからRF引き締め</p>
+        <p style="margin-top:8px;font-size:13px;"><strong>処方</strong>：<span class="tag tag-blue">ハイドラフェイシャル</span> → <span class="tag tag-blue">ラヴィピール</span> → <span class="tag tag-blue">ケアシス（VC導入）</span></p>
+      </div>
+      <div class="card">
+        <h3>Case B：32歳女性</h3>
+        <p><strong>VISIA結果</strong>：毛穴スコア 28%（かなり悪い）/ シワ 40% / テクスチャ 30%（キメ乱れ）/ ポルフィリン 50%（正常）</p>
+        <p><strong>医師の判断</strong>：開き+すり鉢型。汚れではなく構造の問題。コラーゲン再構築が必要</p>
+        <p style="margin-top:8px;font-size:13px;"><strong>処方</strong>：<span class="tag tag-hot">ポテンツァ</span> → <span class="tag tag-hot">ジュベルック</span> → <span class="tag tag-blue">ケアシス（鎮静）</span></p>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--sub);margin-top:12px;">
+      → 同じ「毛穴が気になる」でも、VISIAの数値によって処方内容が完全に変わる。<br>
+      → LP上でこのような具体例を2〜3パターン見せることで、「自分はどっちなんだろう？診断受けてみたい」という欲求を引き出す。
+    </p>
+  </div>
+</section>
+
+
+<!-- ======================== 1. 人気度 ======================== -->
+<section class="section" id="popularity">
+  <h2 class="section-title">1. 施術別 人気度・口コミランキング</h2>
+  <p class="section-desc">トリビュー・カンナムオンニ・ホットペッパーの掲載数・口コミ数から推定した、パッケージ内各施術の人気度</p>
+
+  <table class="treatment-table">
+    <thead>
+      <tr>
+        <th>施術名</th>
+        <th>トリビュー口コミ</th>
+        <th>カンナムオンニ掲載</th>
+        <th>人気度</th>
+        <th>トレンド</th>
+        <th>含まれるPKG</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>ハイドラフェイシャル</strong></td>
+        <td>7,431件</td>
+        <td>多数</td>
+        <td><span class="stars">★★★★★</span></td>
+        <td><span class="tag tag-stable">定番</span></td>
+        <td><span class="tag tag-blue">PKG1</span></td>
+      </tr>
+      <tr>
+        <td><strong>顔の医療脱毛</strong></td>
+        <td>4,617件</td>
+        <td>多数</td>
+        <td><span class="stars">★★★★★</span></td>
+        <td><span class="tag tag-stable">定番</span></td>
+        <td><span class="tag tag-blue">PKG1</span></td>
+      </tr>
+      <tr>
+        <td><strong>ポテンツァ</strong></td>
+        <td>3,973件</td>
+        <td>805件+</td>
+        <td><span class="stars">★★★★★</span></td>
+        <td><span class="tag tag-hot">急上昇</span></td>
+        <td><span class="tag tag-blue">PKG1</span></td>
+      </tr>
+      <tr>
+        <td><strong>ジュベルック</strong></td>
+        <td>2,668件</td>
+        <td>14,067件</td>
+        <td><span class="stars">★★★★☆</span></td>
+        <td><span class="tag tag-hot">爆発的成長</span> <span class="tag tag-rising">1年で100倍</span></td>
+        <td><span class="tag tag-blue">PKG1</span></td>
+      </tr>
+      <tr>
+        <td><strong>CO2フラクショナルレーザー</strong></td>
+        <td>1,960件</td>
+        <td>6,403件</td>
+        <td><span class="stars">★★★★☆</span></td>
+        <td><span class="tag tag-stable">定番</span></td>
+        <td><span class="tag tag-blue">PKG2</span></td>
+      </tr>
+      <tr>
+        <td><strong>エクソソーム導入</strong></td>
+        <td>300件+</td>
+        <td>増加中</td>
+        <td><span class="stars">★★★★☆</span></td>
+        <td><span class="tag tag-rising">急成長</span></td>
+        <td><span class="tag tag-blue">PKG2</span></td>
+      </tr>
+      <tr>
+        <td><strong>ケアシス（エレクトロポレーション）</strong></td>
+        <td>39件（キレイレポ）</td>
+        <td>—</td>
+        <td><span class="stars">★★★☆☆</span></td>
+        <td><span class="tag tag-stable">安定</span></td>
+        <td><span class="tag tag-blue">PKG1</span></td>
+      </tr>
+      <tr>
+        <td><strong>サブシジョン</strong></td>
+        <td>204件（急増中）</td>
+        <td>2,829件</td>
+        <td><span class="stars">★★★☆☆</span></td>
+        <td><span class="tag tag-rising">認知拡大中</span></td>
+        <td><span class="tag tag-blue">PKG2</span></td>
+      </tr>
+      <tr>
+        <td><strong>VISIA肌診断</strong></td>
+        <td>99件（キレイレポ）</td>
+        <td>—</td>
+        <td><span class="stars">★★★☆☆</span></td>
+        <td><span class="tag tag-stable">集客ツール</span></td>
+        <td><span class="tag tag-blue">両方</span></td>
+      </tr>
+      <tr>
+        <td><strong>ラヴィピール</strong></td>
+        <td>少数</td>
+        <td>少数</td>
+        <td><span class="stars">★★☆☆☆</span></td>
+        <td><span class="tag tag-low">認知低</span></td>
+        <td><span class="tag tag-blue">PKG1</span></td>
+      </tr>
+      <tr>
+        <td><strong>オスマージュ（なふさく式）</strong></td>
+        <td>データなし</td>
+        <td>データなし</td>
+        <td><span class="stars">★☆☆☆☆</span></td>
+        <td><span class="tag tag-low">独自名称</span></td>
+        <td><span class="tag tag-blue">PKG2</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="insight">
+    <strong>KEY INSIGHT</strong>
+    PKG1はポテンツァ・ジュベルックという2026年最注目の施術を中核に据えており、トレンド訴求力が非常に高い。<br>
+    PKG2はサブシジョンの認知度がまだ低い分、「知る人ぞ知る本気の治療」として差別化できるポジション。
+  </div>
+</section>
+
+
+<!-- ======================== 2. 口コミ ======================== -->
+<section class="section" id="reviews">
+  <h2 class="section-title">2. リアルな口コミ &amp; 成功事例</h2>
+  <p class="section-desc">トリビュー・カンナムオンニ・キレイレポ等から抽出した、施術・セットメニューに関するリアルな声</p>
+
+  <div class="subsection">
+    <h3>PKG1関連（韓国陶器肌）の口コミ</h3>
+
+    <div class="review-box">
+      <strong>ポテンツァ（毛穴）</strong><br>
+      「ダーマペンより痛くないのに効果が上。赤みが半日で消えた。毛穴が確実に小さくなった」<br>
+      「目周りや骨に響く部分は痛いけど、仕上がりは断然いい。ダウンタイムが思ったより短くて翌日から普通に仕事できた」
+      <div class="source">トリビュー 口コミ3,973件中の傾向</div>
+    </div>
+
+    <div class="review-box">
+      <strong>ポテンツァ x ジュベルック（セット施術）</strong><br>
+      「ポテンツァの針でジュベルックを真皮まで届けるコンビが最強。1回でハリが明らかに違う」<br>
+      「肌のハリが明らかに変わった。毛穴が引き締まった。1〜2年持続するのがコスパ良い」
+      <div class="source">トリビュー セットチケット多数掲載 / ジュベルック口コミ2,668件</div>
+    </div>
+
+    <div class="review-box">
+      <strong>ハイドラフェイシャル</strong><br>
+      「毛穴汚れがごっそり取れて感動。施術直後から顔全体が明るくなった」<br>
+      「やみつきになる爽快感。月1のメンテナンスとして欠かせない」
+      <div class="source">トリビュー 口コミ7,431件 / 人気チケット口コミ1,000件超で星4以上</div>
+    </div>
+
+    <div class="review-box">
+      <strong>顔の医療脱毛（産毛）</strong><br>
+      「ファンデーションの密着が格段に上がった」「肌の透明感が出た。産毛がなくなるだけでこんなに変わるとは」
+      <div class="source">トリビュー 口コミ4,617件</div>
+    </div>
+
+    <div class="review-box">
+      <strong>ケアシス（エレクトロポレーション）</strong><br>
+      「施術直後から肌がふっくらして毛穴が目立ちにくくツヤが出た」<br>
+      「他の施術後の鎮静に使ったら赤みが引いた。翌朝の肌がモチモチ」<br>
+      <em>※ 単体での劇的変化は感じにくいが、他施術との組み合わせで真価を発揮</em>
+      <div class="source">キレイレポ 39件 / トリビュー チケット掲載</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>PKG2関連（クレーター撲滅）の口コミ</h3>
+
+    <div class="review-box">
+      <strong>サブシジョン + ヒアルロン酸注入</strong><br>
+      トリビューでの口コミ204件（急増中）。人気チケットでは口コミ1,400件以上のクリニックも。<br>
+      施術の評価は概ね肯定的。麻酔後はほぼ無痛との声が多い。<br>
+      <em>※ ネガティブ面：「腫れが強く出た」「3週間経っても内出血と膨らみが残った」等、ダウンタイムの長さへの言及あり</em>
+      <div class="source">
+        出典: <a href="https://tribeau.jp/surgeries/278/clinics" target="_blank">サブシジョンのクリニック一覧 | トリビュー</a> /
+        <a href="https://tribeau.jp/tickets/41370" target="_blank">サブシジョン 口コミ1,400件+ | トリビュー</a>
+      </div>
+    </div>
+
+    <div class="review-box">
+      <strong>CO2フラクショナルレーザー</strong><br>
+      「ダウンタイム後の肌がすごく綺麗。肌が生き返った感覚。発光感が出た」<br>
+      「1回では劇的な変化なし。でも3回目くらいから毛穴落ちが明らかに減った」<br>
+      <em>※「死ぬほど痛い」「色素沈着のリスク」という声もあるため、ダウンタイムの透明性が重要</em>
+      <div class="source">トリビュー 口コミ1,960件（フラクショナル全体）</div>
+    </div>
+
+    <div class="review-box">
+      <strong>エクソソーム導入</strong><br>
+      「他施術のダウンタイムが軽減した」「肌が綺麗になった。再生を実感」<br>
+      <em>※ 30〜50代のエイジングケア層の利用が多いが、レーザー後のブーストとして20代にも広がっている</em>
+      <div class="source">トリビュー チケット300件+ / キレイレポ 29件</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>セット・コース契約の成功口コミ</h3>
+
+    <div class="review-box">
+      <strong>銀座美容皮膚科「総合肌施術のお試しコースプラン」</strong><br>
+      VISIA診断 → お試しコース → 本契約（60万円〜）の3段階ファネルで、広告獲得単価を<strong>80,000円 → 13,000円</strong>に改善。<br>
+      「まず肌を見てもらって、自分に必要な施術がわかった」「セットだとバラバラに受けるより計画的に進められて安心」
+      <div class="source">
+        出典: <a href="https://www.medical-strategy.net/case/" target="_blank">美容クリニックの成功事例・実績 | 株式会社インフィール（CASE_06）</a>
+      </div>
+    </div>
+
+    <div class="review-box">
+      <strong>ポテンツァ + ハイドラフェイシャル セット</strong><br>
+      高須クリニック：20代女性、鼻の黒ずみ・皮脂・毛穴の開きが悩み。ハイドラで洗浄→ポテンツァでRF引き締め。セット割引で5,500円引き（全顔22,000円）。<br>
+      なかにし形成外科：ワンニードルチップポテンツァでブラックヘッド局所治療。DT短・色素沈着リスク低。<br>
+      先にハイドラで毛穴洗浄 → ポテンツァで引き締めの「洗浄→攻め」の動線が高評価。
+      <div class="source">
+        出典: <a href="https://www.takasu.co.jp/photo/potenza005.html" target="_blank">高須クリニック ポテンツァ×ハイドラ症例</a> /
+        <a href="https://www.takasu.co.jp/operation/common_ope_collect/hydrafacial.html" target="_blank">高須 ハイドラフェイシャル</a> /
+        <a href="https://clinic.beauty.hotpepper.jp/H000486097/cases/CC000144435/" target="_blank">銀座高須 症例（ホットペッパー）</a> /
+        <a href="https://nakanishi-keisei.com/search_treatment/%E3%83%9D%E3%83%86%E3%83%B3%E3%83%84%E3%82%A1/" target="_blank">なかにし形成外科 ポテンツァ</a>
+      </div>
+    </div>
+
+    <div class="review-box">
+      <strong>韓国クリニック セットメニュー（カンナムオンニ経由）</strong><br>
+      「ララピール + LDMのセットメニューを韓国で受けた。日本の1/3の価格。セットだと施術間の相乗効果を考えてくれているのが良い」<br>
+      韓国ではララピールとLDMがほぼセット前提。ララピールで柔らかくした肌にLDMの超音波で水分を集め、分解しすぎないバランスを整える。韓国価格で5〜5.5万ウォン（約5,000円〜）。<br>
+      <em>→ 韓国での肌管理体験者が、日本でも同等のセット施術を求める流れが生まれている</em>
+      <div class="source">
+        出典: <a href="https://beauty.hotpepper.jp/kr/slnH000124190/blog/bidA080126752.html" target="_blank">なぜ韓国ではララピールにLDMがセットなのか | ホットペッパー</a> /
+        <a href="https://beauty.hotpepper.jp/kr/slnH000475044/blog/bidA095839420.html" target="_blank">韓国で大人気！ララピール&LDM | ホットペッパー</a> /
+        <a href="https://www.gangnamunni.com/jp/search?q=%E3%83%A9%E3%83%A9%E3%83%94%E3%83%BC%E3%83%AB" target="_blank">ララピール口コミ | カンナムオンニ</a> /
+        <a href="https://comm.konest.com/board/detail.php?no=630876" target="_blank">ララピール+LDM口コミ | コネスト</a> /
+        <a href="https://jigeum.media/8453/" target="_blank">韓国で人気のララピールとは | JIGEUM</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight">
+    <strong>VOICE SUMMARY</strong>
+    「バラバラに受けるより計画的に進められて安心」「自分に必要な施術がわかった」という声が多い。<br>
+    パッケージの価値は「施術の足し算」ではなく「診断に基づく最適化 + 順序設計 + ゴールの可視化」にある。
+  </div>
+</section>
+
+
+<!-- ======================== 3. 価格 ======================== -->
+<section class="section" id="pricing">
+  <h2 class="section-title">3. 価格相場 &amp; パッケージ試算</h2>
+  <p class="section-desc">各施術の市場相場と、パッケージ化した場合の想定価格帯</p>
+
+  <table class="treatment-table">
+    <thead>
+      <tr>
+        <th>施術</th>
+        <th>1回相場</th>
+        <th>コース相場</th>
+        <th>ダウンタイム</th>
+        <th>推奨回数</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>VISIA肌診断</td>
+        <td>無料〜5,500円</td>
+        <td>—</td>
+        <td>なし</td>
+        <td>初回1回</td>
+      </tr>
+      <tr>
+        <td>顔の医療脱毛</td>
+        <td>8,000〜30,000円</td>
+        <td>5回 50,000〜110,000円</td>
+        <td>ほぼなし</td>
+        <td>5〜8回</td>
+      </tr>
+      <tr>
+        <td>ハイドラフェイシャル</td>
+        <td>9,800〜22,800円</td>
+        <td>5回 40,000〜100,000円</td>
+        <td>なし</td>
+        <td>月1回</td>
+      </tr>
+      <tr>
+        <td>ラヴィピール</td>
+        <td>10,000〜25,000円</td>
+        <td>—</td>
+        <td>ほぼなし</td>
+        <td>月1回</td>
+      </tr>
+      <tr>
+        <td>ポテンツァ</td>
+        <td>30,000〜100,000円</td>
+        <td>3回 80,000〜200,000円</td>
+        <td>2〜5日</td>
+        <td>3〜5回</td>
+      </tr>
+      <tr>
+        <td>ジュベルック</td>
+        <td>30,000〜60,000円</td>
+        <td>3回 80,000〜160,000円</td>
+        <td>2〜5日</td>
+        <td>3回1クール</td>
+      </tr>
+      <tr>
+        <td>ケアシス</td>
+        <td>3,300〜20,000円</td>
+        <td>5回 15,000〜80,000円</td>
+        <td>なし</td>
+        <td>毎回仕上げ</td>
+      </tr>
+      <tr>
+        <td>サブシジョン+HA注入</td>
+        <td>40,000〜130,000円</td>
+        <td>—</td>
+        <td>3〜7日</td>
+        <td>1〜3回</td>
+      </tr>
+      <tr>
+        <td>CO2フラクショナル</td>
+        <td>6,200〜60,000円</td>
+        <td>5回 100,000〜250,000円</td>
+        <td>3〜7日</td>
+        <td>3〜5回</td>
+      </tr>
+      <tr>
+        <td>エクソソーム導入</td>
+        <td>22,000〜55,000円</td>
+        <td>—</td>
+        <td>なし〜2日</td>
+        <td>3〜5回</td>
+      </tr>
+      <tr>
+        <td>鎮静ハイドロゲルマスク</td>
+        <td>無料〜3,000円</td>
+        <td>—</td>
+        <td>なし</td>
+        <td>毎回仕上げ</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="comparison-grid">
+    <div class="price-estimate">
+      <div class="pe-header">PKG1: 韓国陶器肌フルコース 価格試算</div>
+      <div class="pe-body">
+        <table>
+          <tr><th>施術</th><th>回数</th><th>想定額</th></tr>
+          <tr><td>VISIA肌診断</td><td>1回</td><td>¥0（セット無料）</td></tr>
+          <tr><td>顔医療脱毛</td><td>5回</td><td>¥80,000</td></tr>
+          <tr><td>ハイドラフェイシャル or ラヴィピール</td><td>3回</td><td>¥45,000</td></tr>
+          <tr><td>ポテンツァ</td><td>3回</td><td>¥180,000</td></tr>
+          <tr><td>ジュベルック導入</td><td>3回</td><td>¥120,000</td></tr>
+          <tr><td>ケアシス</td><td>3回</td><td>¥30,000</td></tr>
+          <tr class="total-row"><td>合計（中央値ベース）</td><td></td><td>¥455,000</td></tr>
+        </table>
+        <p style="font-size:12px;color:#999;margin-top:12px;">最安構成 約30万円 / 高価格帯 約70万円</p>
+      </div>
+    </div>
+
+    <div class="price-estimate">
+      <div class="pe-header">PKG2: クレーター撲滅プラン 価格試算</div>
+      <div class="pe-body">
+        <table>
+          <tr><th>施術</th><th>回数</th><th>想定額</th></tr>
+          <tr><td>VISIA肌診断</td><td>1回</td><td>¥0（セット無料）</td></tr>
+          <tr><td>サブシジョン+HA注入</td><td>2回</td><td>¥140,000</td></tr>
+          <tr><td>CO2フラクショナルレーザー</td><td>5回</td><td>¥150,000</td></tr>
+          <tr><td>エクソソーム導入</td><td>3回</td><td>¥120,000</td></tr>
+          <tr><td>鎮静ハイドロゲルマスク</td><td>5回</td><td>¥10,000</td></tr>
+          <tr class="total-row"><td>合計（中央値ベース）</td><td></td><td>¥420,000</td></tr>
+        </table>
+        <p style="font-size:12px;color:#999;margin-top:12px;">最安構成 約25万円 / 高価格帯 約80万円</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="warning">
+    <strong>PRICING NOTE</strong>
+    バラバラに受けた場合の合計額を「通常価格」として見せ、パッケージ価格との差額で「お得感」を出すのが定石。<br>
+    ただし、このパッケージの本質的価値は「安さ」ではなく「最適化された組み合わせ + 診断に基づく設計」。安売り訴求に寄せすぎない方がいい。
+  </div>
+</section>
+
+
+<!-- ======================== 4. 市場 ======================== -->
+<section class="section" id="market">
+  <h2 class="section-title">4. 市場トレンド &amp; ターゲット分析</h2>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="number">68.9%</div>
+      <div class="label">美容医療に「抵抗がある」と回答</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">約80%</div>
+      <div class="label">経験者は「今後も続けたい」</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">約70%</div>
+      <div class="label">経験者がクリニック選びに後悔</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">100倍+</div>
+      <div class="label">ジュベルック施術数（1年間の増加）</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>2025-2026年の主要トレンド</h3>
+    <div class="card">
+      <ul class="check-list">
+        <li><strong>韓国「肌管理」文化の日本浸透</strong>：品川美容外科が専用LP/メニューを作るほどの需要。韓国渡航して施術を受ける層がカンナムオンニ経由で増加中</li>
+        <li><strong>ポテンツァ x ジュベルック が鉄板コンビに</strong>：トリビュー上に専用チケットが多数出現。2026年はさらに加速予測</li>
+        <li><strong>マイクロサブシジョン + 肌育注射</strong>：キレイパスbyGMOの2026年予測でトレンド入り。ダウンタイム短縮版が台頭</li>
+        <li><strong>男性の美容医療利用が急拡大</strong>：トリビュー男性ランキング2位がニードルRF（ポテンツァ）、3位が顔脱毛</li>
+        <li><strong>「お任せ」需要の増加</strong>：月5万円課金しているのに自分の肌状態を把握していない層が一定数いる。VISIAで可視化 → 最適化提案の導線が刺さる</li>
+        <li><strong>コース契約への警戒心</strong>：2017年の特商法適用後「高額コース売りつけ」への警戒あり。透明性と段階的コミットが鍵</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>ターゲットペルソナ案</h3>
+
+    <div class="comparison-grid">
+      <div class="persona-card">
+        <div class="persona-tag">PKG1 PRIMARY PERSONA</div>
+        <h4>「なんとなく美容は好き」なお任せ層</h4>
+        <div class="detail">
+          <strong>年齢</strong>：25〜35歳女性<br>
+          <strong>特徴</strong>：韓国コスメ好き。美容クリニックは脱毛くらい。毛穴の黒ずみ・くすみが気になるがどの施術がいいか分からない<br>
+          <strong>月の美容支出</strong>：1〜3万円<br>
+          <strong>心理</strong>：「何をすればいいか分からないから全部見てほしい」「自分の肌に何が足りないか知りたい」<br>
+          <strong>決め手</strong>：診断結果の可視化、医師のお任せ提案、ダウンタイムの短さ<br>
+          <strong>ハードル</strong>：総額への不安、痛みへの恐怖、コース契約への警戒
+        </div>
+      </div>
+      <div class="persona-card">
+        <div class="persona-tag">PKG2 PRIMARY PERSONA</div>
+        <h4>「何年も悩んで色々試した」経験者層</h4>
+        <div class="detail">
+          <strong>年齢</strong>：22〜40歳 男女<br>
+          <strong>特徴</strong>：ニキビ跡・クレーターで長年悩む。ダーマペン・ピーリングは試した。根本的に治したい<br>
+          <strong>月の美容支出</strong>：3〜10万円<br>
+          <strong>心理</strong>：「もう半端な治療はいい。本気で治してくれるところを探している」「ダウンタイムは覚悟してる」<br>
+          <strong>決め手</strong>：治療の論理性、ゴールの見える化、「他で治らなかった」事例<br>
+          <strong>ハードル</strong>：「また効果がなかったらどうしよう」という不安。高額だが効果に確信が持てれば出せる
+        </div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <strong>TARGETING INSIGHT</strong>
+      PKG1は「まだ美容医療の正解がわからない人」に最適化を提供する → <strong>VISIA診断が最大のフック</strong><br>
+      PKG2は「もう色々やったけどダメだった人」に最後の手段を提供する → <strong>サブシジョンの「根本治療」が最大のフック</strong><br>
+      2本のLPで明確にペルソナを分けることで、同じ美肌商品でもメッセージを変えられる。
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>ユーザーの不安 &amp; 突破すべきハードル</h3>
+    <table class="treatment-table">
+      <thead>
+        <tr><th>ハードル</th><th>具体的な声</th><th>LP上での対策</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>費用の不透明さ</strong></td>
+          <td>「結局いくらかかるの？」「追加費用が怖い」</td>
+          <td>パッケージ総額の明示。追加費用なしの保証</td>
+        </tr>
+        <tr>
+          <td><strong>効果への不確実性</strong></td>
+          <td>「ポテンツァ 効果ない」で検索する人が多い</td>
+          <td>VISIA診断のビフォーアフター数値で効果を可視化</td>
+        </tr>
+        <tr>
+          <td><strong>痛み・ダウンタイム</strong></td>
+          <td>「仕事を休めない」「痛みに弱い」</td>
+          <td>施術ごとのDT日数を正直に開示。スケジュール例を提示</td>
+        </tr>
+        <tr>
+          <td><strong>コース契約への警戒</strong></td>
+          <td>「売りつけられそう」「途中で辞められる？」</td>
+          <td>まずは診断だけ → 納得してから開始。中途解約条件の明記</td>
+        </tr>
+        <tr>
+          <td><strong>クリニック選びの不安</strong></td>
+          <td>「7割がクリニック選びに後悔」のデータ</td>
+          <td>医師の顔出し・経歴・症例数の透明性</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ======================== 5. 攻め方 ======================== -->
+<section class="section" id="concept">
+  <h2 class="section-title">5. LP攻め方 &amp; コンセプト設計</h2>
+  <p class="section-desc">2本のLPの差別化ポイントと、「VISIA診断 → オーダーメイドパッケージ」のコンセプト設計</p>
+
+  <div class="concept-box" style="border:2px solid var(--accent);">
+    <h3>核心コンセプト：「施術が多すぎて選べない」問題を解決する</h3>
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:24px;margin-bottom:20px;">
+      <p style="font-size:15px;font-weight:700;margin-bottom:12px;">ユーザーが今いる場所</p>
+      <p style="font-size:13px;color:var(--sub);line-height:1.9;">
+        美容クリニックのLPやSNSには施術が無数に並んでいる。<br>
+        ポテンツァ、ハイドラフェイシャル、フラクショナルレーザー、ダーマペン、ジュベルック、エリシスセンス、ブレッシング、キュアジェット…<br>
+        <strong>「で、結局どれが自分に合ってるの？」</strong><br><br>
+        毛穴が気になるけど、それが詰まりなのか開きなのかたるみなのかで最適な施術は全く違う。<br>
+        シミだと思ってたものが肝斑なら、レーザーを当てたら悪化する。<br>
+        痛みに弱い人とDT1週間取れる人では選ぶべき機器が変わる。<br><br>
+        <strong>自分で正解にたどり着くのは、ほぼ不可能。</strong>
+      </p>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:24px;margin-bottom:20px;">
+      <p style="font-size:15px;font-weight:700;margin-bottom:12px;">このLPが提供する答え</p>
+      <p style="font-size:13px;color:var(--sub);line-height:1.9;">
+        <strong>「選ばなくていい。診断すれば、答えが出る。」</strong><br><br>
+        VISIA肌診断であなたの肌状態を8項目で数値化。<br>
+        さらにダウンタイムの許容度、痛みの耐性、予算、ゴールをヒアリング。<br>
+        その全てを踏まえて、熟練の医師が「あなたにとってのベスト」を1枚の診断書にまとめる。<br><br>
+        施術を選ぶのはあなたじゃない。<strong>あなたの肌データと生活に合わせて、医師が選ぶ。</strong><br>
+        だから最短で、最も効果的に、理想に近づける。
+      </p>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step">
+        <div class="step-num">STEP 01</div>
+        <div class="step-title">VISIA肌診断</div>
+        <div class="step-desc">8項目を数値化。<br>毛穴タイプ・シミ/肝斑の<br>判別まで完了</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-num">STEP 02</div>
+        <div class="step-title">パーソナルヒアリング</div>
+        <div class="step-desc">DT許容度・痛み耐性<br>予算・ゴール・施術歴を<br>医師がヒアリング</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="border:2px solid var(--accent);">
+        <div class="step-num">STEP 03</div>
+        <div class="step-title">ゴールデンプラン作成</div>
+        <div class="step-desc">肌データ × あなたの事情<br>= あなただけの<br>最適処方を1枚に</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <div class="step-num">STEP 04</div>
+        <div class="step-title">施術 → VISIAで効果確認</div>
+        <div class="step-desc">コース完了後に再診断。<br>変化を数値で実感</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>もう一つの攻め方：人気施術を軸に「効果を爆上げする」相乗効果パッケージ</h3>
+    <p style="font-size:13px;color:var(--sub);margin-bottom:16px;">
+      オーダーメイド設計に加えて、「みんなが知っている人気施術の効果を最大化する」というアプローチも強力。<br>
+      「ポテンツァ単体で受けるより、前後の施術を最適化することで効果が2〜3倍変わる」という訴求。
+    </p>
+
+    <div class="concept-box" style="background:linear-gradient(135deg, #f8f5f0 0%, #efe8df 100%);">
+      <h3>例：「ポテンツァの効果を最大化する」パッケージ設計</h3>
+      <div class="flow">
+        <div class="flow-step" style="background:#fff8f0;">
+          <div class="step-num">BEFORE</div>
+          <div class="step-title">ハイドラフェイシャル</div>
+          <div class="step-desc">毛穴の汚れを徹底除去。<br>ポテンツァの針が<br>クリーンな肌に直接届く</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step" style="background:#fff5f0;border:2px solid var(--accent);">
+          <div class="step-num">MAIN</div>
+          <div class="step-title">ポテンツァ（RF引き締め）</div>
+          <div class="step-desc">前処置で毛穴が開いた状態に<br>RFを照射。効果が<br>段違いに変わる</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step" style="background:#fff8f0;">
+          <div class="step-num">BOOST</div>
+          <div class="step-title">ジュベルック導入</div>
+          <div class="step-desc">ポテンツァの針穴から<br>PLLAを真皮へ直接送達。<br>コラーゲン生成を加速</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step" style="background:#f5f8f0;">
+          <div class="step-num">FINISH</div>
+          <div class="step-title">ケアシス（鎮静導入）</div>
+          <div class="step-desc">赤みを鎮静しながら<br>美容成分を浸透。<br>DT軽減+仕上げ</div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--sub);margin-top:16px;">
+        → 高須クリニックでもこの「ハイドラ→ポテンツァ」の順序で症例を出している（<a href="https://www.takasu.co.jp/photo/potenza005.html" style="color:var(--blue);">症例</a>）。<br>
+        → 「ポテンツァ単体」ではなく「なぜこの順番で受けると効果が変わるのか」を論理的に説明することが訴求力になる。
+      </p>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>次世代ニードルRF：ポテンツァだけじゃない選択肢</h3>
+    <p style="font-size:13px;color:var(--sub);margin-bottom:16px;">
+      ポテンツァは口コミ3,973件と実績ダントツだが、美容医療経験者から見ると「もう定番すぎる」面もある。<br>
+      次世代機器を選択肢に含めることで、「ここは最新の治療も提案してくれる」という信頼感を獲得できる。
+    </p>
+
+    <table class="treatment-table">
+      <thead>
+        <tr><th></th><th>ポテンツァ（定番）</th><th>エリシスセンス（痛み軽減型）</th><th>ブレッシング（次世代型）</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>世代</strong></td>
+          <td>第1世代（2020年〜）</td>
+          <td>第1.5世代（2023年〜）</td>
+          <td>第2世代（2025年夏〜）</td>
+        </tr>
+        <tr>
+          <td><strong>核心技術</strong></td>
+          <td>RF+ニードル+ドラッグデリバリー</td>
+          <td>ダブルショット（1刺入で2層照射）<br>真空サクション</td>
+          <td>傾斜刺入テクノロジー（斜め刺入で<br>サブシジョン効果も発揮）<br>100%薬剤浸透</td>
+        </tr>
+        <tr>
+          <td><strong>痛み</strong></td>
+          <td>中程度</td>
+          <td>軽減（刺入回数が半分）</td>
+          <td>軽減（斜め刺入で組織損傷少）</td>
+        </tr>
+        <tr>
+          <td><strong>ダウンタイム</strong></td>
+          <td>2〜5日</td>
+          <td>当日〜翌日</td>
+          <td>軽減（データ蓄積中）</td>
+        </tr>
+        <tr>
+          <td><strong>強み</strong></td>
+          <td>圧倒的な実績・症例数<br>チップ種類が豊富</td>
+          <td>目周り・首元にも対応<br>痛みに弱い人に最適</td>
+          <td>ニードルRF+サブシジョンの融合<br>ポテンツァ開発チームの最新作</td>
+        </tr>
+        <tr>
+          <td><strong>口コミ数</strong></td>
+          <td>3,973件（トリビュー）</td>
+          <td>増加中（品川導入済み）</td>
+          <td>まだ少ない（2025年発売）</td>
+        </tr>
+        <tr>
+          <td><strong>向いている人</strong></td>
+          <td>実績重視・初めてのニードルRF</td>
+          <td>痛み×・DT取れない人</td>
+          <td>経験者・最新を求める人</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="insight">
+      <strong>LP戦略への示唆</strong>
+      <strong>初心者向け（PKG1のメインターゲット）</strong>にはポテンツァの実績・口コミ数が最大の安心材料。「3,973件の口コミ」は強い。<br>
+      <strong>経験者向け</strong>には「うちはポテンツァだけじゃなく、診断結果に基づいて最適な機器を選定する」と伝えることで差別化。<br>
+      VISIA診断 → 機器の選定まで医師が行う、というストーリーにすることで、「パッケージ」の価値がさらに上がる。<br><br>
+      <span style="font-size:12px;">
+        出典: <a href="https://jskinclinic.com/contents/blessing/" style="color:var(--blue);">JSKINクリニック ブレッシング</a> /
+        <a href="https://ace-clinic.com/blog/41788/" style="color:var(--blue);">ACE CLINIC ブレッシング解禁</a> /
+        <a href="https://skinnal.co.jp/column/938/" style="color:var(--blue);">スキンなる ポテンツァvsエリシスセンス</a> /
+        <a href="https://mybc.jp/column/aesthetic-dermatology/5746/" style="color:var(--blue);">MYビューティー エリシスセンスvsポテンツァ</a> /
+        <a href="https://www.efiller.jp/skin/ellisys_sense/" style="color:var(--blue);">フィラークリニック エリシスセンス</a>
+      </span>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="subsection">
+    <h3>PKG1 向け：施術カテゴリ別「A群 × B群 × C群」カスタマイズ方式</h3>
+    <p style="font-size:13px;color:var(--sub);margin-bottom:16px;">
+      施術を<strong>役割カテゴリ</strong>ごとにA群・B群・C群に分類。各群の中から、VISIA診断 + パーソナル条件に基づいて医師が最適な1つを選ぶ。<br>
+      「A群から1つ + B群から1つ + C群から1つ = あなただけの組み合わせ」。<br>
+      選択肢がこれだけあるからこそ、自分で選ぶのは不可能 → 診断が必要、という訴求になる。
+    </p>
+
+    <div class="group-grid">
+      <div class="group-box" style="border-top:3px solid var(--green);">
+        <h4>A群：洗浄・下地づくり</h4>
+        <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">まず肌のコンディションを整える。汚れを落とし、次の施術の浸透・効果を最大化するための前処置</p>
+        <p style="font-size:11px;color:var(--green);font-weight:700;margin-bottom:6px;">この中から医師が1つ選定 ↓</p>
+        <ul>
+          <li><strong>ハイドラフェイシャル</strong>（水流で毛穴汚れ除去）</li>
+          <li><strong>ラヴィピール</strong>（LHA系角質溶解＋美容成分）</li>
+          <li><strong>ララピール</strong>（韓国式。LDMとセットが基本）</li>
+          <li><strong>ケミカルピーリング</strong>（サリチル酸/グリコール酸等）</li>
+          <li><strong>顔の医療脱毛</strong>（産毛除去でトーンUP＋浸透率UP）</li>
+        </ul>
+        <p style="font-size:11px;color:#999;margin-top:8px;">
+          <strong>選定基準</strong>：毛穴の詰まり具合、ポルフィリン値、皮脂量、肌の敏感度
+        </p>
+      </div>
+      <div class="group-box" style="border-top:3px solid var(--red);">
+        <h4>B群：攻め・再構築（ニードルRF+薬剤）</h4>
+        <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">パッケージの核。機器 × 薬剤の掛け合わせで最適な「攻め」を設計する</p>
+        <p style="font-size:11px;color:var(--red);font-weight:700;margin-bottom:6px;">機器（この中から1つ）↓</p>
+        <ul>
+          <li><strong>ポテンツァ</strong>（定番。口コミ3,973件の実績）</li>
+          <li><strong>エリシスセンス</strong>（痛み・DT軽減。ダブルショット）</li>
+          <li><strong>ブレッシング</strong>（次世代。傾斜刺入でサブシジョン効果）</li>
+        </ul>
+        <p style="font-size:11px;color:var(--red);font-weight:700;margin-bottom:6px;margin-top:8px;">薬剤（この中から1つ）↓</p>
+        <ul>
+          <li><strong>ジュベルック</strong>（PLLA。コラーゲン生成。1年で施術数100倍）</li>
+          <li><strong>マックーム</strong>（肝斑・色素沈着特化）</li>
+          <li><strong>リジュラン</strong>（サーモン注射。肌再生）</li>
+          <li><strong>エクソソーム</strong>（成長因子。再生ブースト）</li>
+        </ul>
+        <p style="font-size:11px;color:#999;margin-top:8px;">
+          <strong>選定基準</strong>：毛穴タイプ（開き/たるみ/すり鉢）、痛み耐性、DT許容度、肌悩みの種類
+        </p>
+      </div>
+      <div class="group-box" style="border-top:3px solid var(--blue);">
+        <h4>C群：仕上げ・導入・鎮静</h4>
+        <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">攻めた後の仕上げ。鎮静しながら美容成分を浸透させ、DT軽減と効果の底上げを同時に行う</p>
+        <p style="font-size:11px;color:var(--blue);font-weight:700;margin-bottom:6px;">この中から医師が1つ選定 ↓</p>
+        <ul>
+          <li><strong>ケアシス + ビタミンC</strong>（美白・皮脂抑制）</li>
+          <li><strong>ケアシス + トラネキサム酸</strong>（肝斑・色素沈着対策）</li>
+          <li><strong>ケアシス + 成長因子</strong>（再生・ハリ回復）</li>
+          <li><strong>高濃度エクソソーム導入</strong>（ターンオーバー活性化）</li>
+          <li><strong>鎮静ハイドロゲルマスク</strong>（赤み・炎症の即時鎮静）</li>
+        </ul>
+        <p style="font-size:11px;color:#999;margin-top:8px;">
+          <strong>選定基準</strong>：B群の施術強度、肌の炎症度、隠れジミの有無、赤み・色ムラの原因
+        </p>
+      </div>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:20px;margin:16px 0;">
+      <h4 style="font-size:14px;margin-bottom:12px;">カスタマイズ例</h4>
+      <table class="treatment-table" style="font-size:12px;">
+        <thead><tr><th>ケース</th><th>A群（洗浄）</th><th>B群（攻め）</th><th>C群（仕上げ）</th><th>根拠</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>28歳・詰まり毛穴<br>痛み×・DT2日</strong></td>
+            <td><span class="tag tag-stable">ハイドラフェイシャル</span></td>
+            <td><span class="tag tag-rising">エリシスセンス</span> × <span class="tag tag-blue">ジュベルック</span></td>
+            <td><span class="tag tag-blue">ケアシス+VC</span></td>
+            <td>詰まり除去優先。痛み弱→エリシス。DT短い構成</td>
+          </tr>
+          <tr>
+            <td><strong>32歳・開き毛穴<br>痛みOK・DT5日OK</strong></td>
+            <td><span class="tag tag-stable">ラヴィピール</span></td>
+            <td><span class="tag tag-hot">ポテンツァ</span> × <span class="tag tag-blue">ジュベルック</span></td>
+            <td><span class="tag tag-blue">エクソソーム導入</span></td>
+            <td>開き毛穴→ポテンツァの鉄板。角質ケアから入る構成</td>
+          </tr>
+          <tr>
+            <td><strong>27歳・くすみ+肝斑疑い<br>DT最小希望</strong></td>
+            <td><span class="tag tag-stable">顔脱毛</span></td>
+            <td><span class="tag tag-rising">エリシスセンス</span> × <span class="tag tag-blue">マックーム</span></td>
+            <td><span class="tag tag-blue">ケアシス+トラネキサム酸</span></td>
+            <td>肝斑疑い→マックーム必須。高出力レーザー禁忌を回避</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insight">
+      <strong>WHY THIS WORKS</strong>
+      LP上でA/B/C群の選択肢一覧を見せる → 「こんなにあるの？自分じゃ絶対選べない」→ <strong>診断を受ける動機に直結する</strong>。<br>
+      「どの群からどれを選ぶかは、VISIAの数値 × あなたの事情で医師が決める」→ 単なるセットメニューとの決定的な差別化。<br>
+      カスタマイズ例を2〜3パターン見せることで「自分だったらどうなるんだろう」のワクワク感を刺激する。
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3>PKG2 向け：同じカテゴリ別カスタマイズ方式（クレーター版）</h3>
+    <p style="font-size:13px;color:var(--sub);margin-bottom:16px;">
+      PKG2もA群×B群×C群の構造は同じ。ただし「攻め」の選択肢がクレーター特化の施術群に変わる。<br>
+      クレーターは深さ・範囲・タイプ（アイスピック型/ボックスカー型/ローリング型）で治療法が異なるため、<br>
+      VISIA + 医師の触診で分類し、各群から最適な1つを選ぶ。
+    </p>
+
+    <div class="group-grid" style="margin-bottom:20px;">
+      <div class="group-box" style="border-top:3px solid var(--green);">
+        <h4>A群：切る・剥がす（深部アプローチ）</h4>
+        <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">真皮の癒着を物理的に処理。クレーター治療の根本</p>
+        <p style="font-size:11px;color:var(--green);font-weight:700;margin-bottom:6px;">この中から1つ ↓</p>
+        <ul>
+          <li><strong>サブシジョン + HA注入</strong>（針で癒着切断→再癒着防止）</li>
+          <li><strong>キュアジェット</strong>（高圧ジェットで硬化組織切断）</li>
+          <li><strong>ブレッシング</strong>（傾斜刺入でサブシジョン効果+RF）</li>
+        </ul>
+        <p style="font-size:11px;color:#999;margin-top:8px;">選定基準：凹みの深さ、癒着の有無、DT許容度</p>
+      </div>
+      <div class="group-box" style="border-top:3px solid var(--red);">
+        <h4>B群：再構築（表面〜中層アプローチ）</h4>
+        <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">肌表面の凹凸をなだらかにし、新しい肌を再構築する</p>
+        <p style="font-size:11px;color:var(--red);font-weight:700;margin-bottom:6px;">この中から1つ ↓</p>
+        <ul>
+          <li><strong>CO2フラクショナルレーザー</strong>（微細穴→創傷治癒で再構築）</li>
+          <li><strong>ポテンツァ</strong>（ニードルRFで真皮コラーゲン再生）</li>
+          <li><strong>エリシスセンス</strong>（DT軽減版。痛み弱い人向け）</li>
+        </ul>
+        <p style="font-size:11px;color:#999;margin-top:8px;">選定基準：凹みのタイプ（すり鉢/ボックスカー）、痛み耐性、範囲</p>
+      </div>
+      <div class="group-box" style="border-top:3px solid var(--blue);">
+        <h4>C群：回復ブースト・鎮静</h4>
+        <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">攻めた肌の回復を加速し、DT軽減と再生を同時に行う</p>
+        <p style="font-size:11px;color:var(--blue);font-weight:700;margin-bottom:6px;">この中から1つ ↓</p>
+        <ul>
+          <li><strong>高濃度エクソソーム導入</strong>（成長因子で細胞再生ブースト）</li>
+          <li><strong>ケアシス + 成長因子</strong>（エレクトロポレーションで浸透）</li>
+          <li><strong>鎮静ハイドロゲルマスク</strong>（即時鎮静・保湿）</li>
+          <li><strong>PRP療法</strong>（自己血由来。再生医療）</li>
+        </ul>
+        <p style="font-size:11px;color:#999;margin-top:8px;">選定基準：A群・B群の施術強度、DT軽減の優先度、予算</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:20px;">
+      <h3>PKG2の治療ツール比較：サブシジョン × キュアジェット × CO2フラクショナル</h3>
+      <table class="treatment-table" style="font-size:12px;">
+        <thead>
+          <tr><th></th><th>サブシジョン</th><th>キュアジェット</th><th>CO2フラクショナル</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>アプローチ</strong></td>
+            <td>真皮の癒着を針で物理的に切断</td>
+            <td>高圧ジェットで硬化組織を切断+薬剤注入</td>
+            <td>レーザーで肌表面に微細穴→創傷治癒で再構築</td>
+          </tr>
+          <tr>
+            <td><strong>得意な凹み</strong></td>
+            <td><strong>深い</strong>凹み、ローリング型（広く浅い）</td>
+            <td><strong>浅〜中程度</strong>の凹み、小型のクレーター</td>
+            <td><strong>広範囲</strong>の表面凹凸、すり鉢毛穴</td>
+          </tr>
+          <tr>
+            <td><strong>苦手</strong></td>
+            <td>浅い小型のニキビ跡</td>
+            <td>深い癒着のあるクレーター</td>
+            <td>深い単発クレーター</td>
+          </tr>
+          <tr>
+            <td><strong>DT</strong></td>
+            <td>3〜7日（内出血・腫れ）</td>
+            <td>3〜7日（赤み・腫れ）</td>
+            <td>3〜7日（赤み・かさぶた）</td>
+          </tr>
+          <tr>
+            <td><strong>相場</strong></td>
+            <td>3〜8万円/回</td>
+            <td>2〜5万円/回</td>
+            <td>0.6〜6万円/回</td>
+          </tr>
+          <tr>
+            <td><strong>口コミ</strong></td>
+            <td>「他で治らなかったのが治った」</td>
+            <td>「クレーターが目立たなくなった」「肌の質感が柔らかくなった」</td>
+            <td>「肌が生き返った感覚」</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px;color:var(--sub);margin-top:12px;">
+        <strong>組み合わせのポイント</strong>：サブシジョン（深部の癒着切断）+ キュアジェット（表面〜中層のジェット処理）+ CO2フラクショナル（広範囲の再構築）は、<br>
+        それぞれ得意なレイヤーが違うため、重症度に応じて組み合わせることで全層にアプローチできる。<br>
+        <span style="font-size:11px;color:#999;">
+          出典: <a href="https://shibuya-hifuka.jp/chiryou/detail/curejet.html">渋谷駅前おおしま皮膚科 キュアジェット</a> /
+          <a href="https://yuki-skin.clinic/column/curejet/curejet-effect/">ゆきスキンクリニック キュアジェット効果</a> /
+          <a href="https://atsuta-skin-clinic.net/blog/10326/">あつた皮ふ科 キュアジェット症例</a> /
+          <a href="https://shibuya-hifuka.jp/wppage/column/kyuajietto-kureta/">おおしま皮膚科 キュアジェットでクレーターは治せるか</a>
+        </span>
+      </p>
+    </div>
+
+    <div class="group-grid">
+      <div class="group-box">
+        <h4>軽度：すり鉢毛穴メイン</h4>
+        <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">浅い凹み、広範囲に散在</p>
+        <ul>
+          <li>→ <strong>キュアジェット</strong>（表層ジェット処理）</li>
+          <li>→ <strong>CO2フラクショナル</strong> x 3回</li>
+          <li>→ <strong>エクソソーム導入</strong> x 3回</li>
+          <li>→ <strong>鎮静マスク</strong>（毎回）</li>
+        </ul>
+        <p style="font-size:11px;color:#999;margin-top:8px;">表面アプローチ中心。キュアジェットの得意領域</p>
+      </div>
+      <div class="group-box">
+        <h4>中度：ボックスカー型クレーター</h4>
+        <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">中程度の深さ、角ばった凹み</p>
+        <ul>
+          <li>→ <strong>サブシジョン+HA</strong> x 1回</li>
+          <li>→ <strong>キュアジェット</strong> x 2回</li>
+          <li>→ <strong>CO2フラクショナル</strong> x 3回</li>
+          <li>→ <strong>エクソソーム導入</strong> x 3回</li>
+        </ul>
+        <p style="font-size:11px;color:#999;margin-top:8px;">深部+中層+表面の3層アプローチ</p>
+      </div>
+      <div class="group-box">
+        <h4>重度：深いクレーター複数</h4>
+        <p style="font-size:12px;color:var(--sub);margin-bottom:8px;">深い凹み、癒着あり</p>
+        <ul>
+          <li>→ <strong>サブシジョン+HA</strong> x 2回</li>
+          <li>→ <strong>キュアジェット</strong> x 3回</li>
+          <li>→ <strong>CO2フラクショナル</strong> x 5回</li>
+          <li>→ <strong>エクソソーム導入</strong> x 5回</li>
+        </ul>
+        <p style="font-size:11px;color:#999;margin-top:8px;">フルスペック全層治療。覚悟がある人向け</p>
+      </div>
+    </div>
+
+    <div class="insight">
+      <strong>PKG2 の攻め方</strong>
+      「優しいピーリングでは治らない」と正直に伝えるのがこのパッケージの差別化ポイント（商品設計にもそう書いてある）。<br>
+      <strong>「深さによって使う武器が違う」</strong>という論理性が、何年も悩んできた経験者層の「なぜ今まで治らなかったのか」に明確に答える。<br>
+      サブシジョン=深部、キュアジェット=中層、CO2フラクショナル=表面。この3層アプローチの図解がLP上で最大の説得力になる。<br>
+      口コミでも「もっと早くやればよかった」「他で治らなかったのが治った」が最多の成功パターン。
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="subsection">
+    <h3>2本のLPの差別化マトリクス</h3>
+    <table class="treatment-table">
+      <thead>
+        <tr><th></th><th>PKG1：韓国陶器肌フルコース</th><th>PKG2：クレーター撲滅プラン</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>コンセプト</strong></td>
+          <td>「理想の肌」に最短で近づくオーダーメイド</td>
+          <td>「もう治らない」を覆す本気の凹凸リセット</td>
+        </tr>
+        <tr>
+          <td><strong>メインターゲット</strong></td>
+          <td>25〜35歳女性。美容好きだが施術選びに迷う</td>
+          <td>22〜40歳男女。ニキビ跡で長年悩み、色々試した</td>
+        </tr>
+        <tr>
+          <td><strong>トーン</strong></td>
+          <td>ワクワク・憧れ・韓国トレンド</td>
+          <td>覚悟・信頼・論理的・誠実</td>
+        </tr>
+        <tr>
+          <td><strong>最大のフック</strong></td>
+          <td>VISIA診断で自分だけの処方がわかる</td>
+          <td>「優しい治療では治らない」という正直な宣言</td>
+        </tr>
+        <tr>
+          <td><strong>CTA</strong></td>
+          <td>「まずは無料VISIA肌診断を受けてみる」</td>
+          <td>「あなたのクレーターの深さを診断する」</td>
+        </tr>
+        <tr>
+          <td><strong>ビフォーアフター</strong></td>
+          <td>VISIAの数値変化 + 肌の質感写真</td>
+          <td>クレーターの凹凸が平らになった写真 + VISIA比較</td>
+        </tr>
+        <tr>
+          <td><strong>価格の見せ方</strong></td>
+          <td>「バラバラに受けたら○万円 → パッケージで○万円」</td>
+          <td>「ゴールまでの総額を最初に提示。追加費用なし」</td>
+        </tr>
+        <tr>
+          <td><strong>心理的ハードル対策</strong></td>
+          <td>まず診断だけ → 納得してからスタート</td>
+          <td>DT日数の正直な開示 + スケジュール例</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ======================== 6. ワイヤー ======================== -->
+<section class="section" id="wireframe">
+  <h2 class="section-title">6. ワイヤー構成案（2本分）</h2>
+  <p class="section-desc">LP構成の骨格。各セクションの意図と、口コミ・データに基づく設計根拠</p>
+
+  <div class="comparison-grid" style="margin-top:24px;">
+
+    <!-- PKG1 Wireframe -->
+    <div class="pkg-card">
+      <h4>LP1：韓国陶器肌フルコース</h4>
+      <div class="target">Target: 25〜35歳女性 / 美容好き・お任せ層</div>
+
+      <table class="treatment-table" style="font-size:12px;">
+        <thead><tr><th>#</th><th>セクション</th><th>意図</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td><strong>FV：「施術が多すぎて、どれが正解かわからない」</strong><br>ポテンツァ、ハイドラ、ジュベルック…施術名が散らばるビジュアル → 「答えは、あなたの肌データの中にある」<br>診断書ビジュアル + 「無料オーダーメイド診断書をもらう」CTA</td>
+            <td>共感から入る。「それな」と思わせてから解決策を提示</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td><strong>問題提起：同じ「毛穴」でも正解は4つある</strong><br>詰まり/黒ずみ/開き/たるみで施術が全く違う図解。「シミだと思ってレーザーを当てたら肝斑で悪化した」例</td>
+            <td>「自己判断は危険」→「だから診断が必要」の流れ</td>
+          </tr>
+          <tr>
+            <td>03</td>
+            <td><strong>解決策：VISIA × パーソナル条件 × 医師の処方</strong><br>3軸の図解：肌データ（8項目数値化）+ あなたの事情（DT許容度・痛み耐性・予算・ゴール）+ 医師の専門判断 = あなただけのゴールデンプラン</td>
+            <td>コンセプトの核。「選ばなくていい。診断すれば、答えが出る」</td>
+          </tr>
+          <tr>
+            <td>04</td>
+            <td><strong>診断書サンプル 2〜3パターン</strong><br>Case A「28歳・詰まり毛穴・DT2日OK → ハイドラ+ラヴィピール+ケアシス」<br>Case B「32歳・開き毛穴・痛みOK → ポテンツァ+ジュベルック+ケアシス」</td>
+            <td>「自分はAとBどっちだろう？」→ 診断を受けたくなる</td>
+          </tr>
+          <tr>
+            <td>05</td>
+            <td><strong>施術ラインナップ（選択肢の全容）</strong><br>ポテンツァ/エリシスセンス/ブレッシング等を「なぜ複数あるのか」含めて簡潔に。各施術の特徴・DT・痛みレベル</td>
+            <td>「こんなに選択肢があるからこそ、診断が必要」の説得力補強</td>
+          </tr>
+          <tr>
+            <td>06</td>
+            <td><strong>ビフォーアフター（VISIAの数値変化）</strong><br>VISIA数値 + 実際の肌写真 2〜3例。「毛穴数 342 → 187」のような具体数値</td>
+            <td>写真だけでなく数値で証明。加工疑惑なし</td>
+          </tr>
+          <tr>
+            <td>07</td>
+            <td><strong>医師紹介</strong><br>「この先生が、あなたのプランを設計する」顔出し+経歴+専門分野+症例数</td>
+            <td>「誰が処方するか」がオーダーメイドの信頼の核</td>
+          </tr>
+          <tr>
+            <td>08</td>
+            <td><strong>コースの流れ &amp; スケジュール例</strong><br>6ヶ月〜12ヶ月の可視化。「DT少なめプラン」「最速プラン」の2パターン</td>
+            <td>ライフスタイルに合わせた選択肢があることの安心感</td>
+          </tr>
+          <tr>
+            <td>09</td>
+            <td><strong>口コミ・体験者の声</strong><br>「何を受ければいいか分からなかったけど、診断で明確になった」「診断書が他院比較の基準になった」</td>
+            <td>同じ悩みの人が解決した証拠</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td><strong>料金</strong><br>「診断書＆ゴールデンプラン作成は無料」を強調。パッケージ参考価格帯も提示</td>
+            <td>「まず診断だけ」のハードルを徹底的に下げる</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td><strong>Q&amp;A</strong><br>痛み、DT、途中変更、効果の個人差、診断だけで帰ってもいい？</td>
+            <td>残った不安の解消。「売りつけない」安心感</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td><strong>CTA：「あなただけのオーダーメイド診断書を、無料でお届け」</strong><br>診断書ビジュアル + LINE予約 or Web予約。「持ち帰って検討してもOK」</td>
+            <td>「診断書をもらう」という具体的でノーリスクなアクション</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PKG2 Wireframe -->
+    <div class="pkg-card">
+      <h4>LP2：クレーター撲滅プラン</h4>
+      <div class="target">Target: 22〜40歳男女 / 長年悩んできた経験者</div>
+
+      <table class="treatment-table" style="font-size:12px;">
+        <thead><tr><th>#</th><th>セクション</th><th>意図</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>01</td>
+            <td><strong>FV：「ダーマペン、ピーリング、市販品…全部試した。でも凹凸は変わらなかった。」</strong><br>経験者の声をそのままFVに。→「その凹み、深さによって治し方が全く違います」</td>
+            <td>経験者が「自分のことだ」と即座に反応するコピー</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td><strong>なぜ治らなかったのか</strong><br>クレーター3タイプ（アイスピック/ボックスカー/ローリング）の図解。真皮の癒着は表面処理では届かない</td>
+            <td>「だから今までダメだったのか」の納得</td>
+          </tr>
+          <tr>
+            <td>03</td>
+            <td><strong>解決策：深さを診断して、レイヤー別に攻める</strong><br>VISIA + 医師の触診で深さ・タイプを判定。サブシジョン=深部、キュアジェット=中層、CO2フラクショナル=表面の3層図解</td>
+            <td>「どの深さにどの武器」の論理性。経験者こそ刺さる</td>
+          </tr>
+          <tr>
+            <td>04</td>
+            <td><strong>パーソナル条件の考慮</strong><br>「DT1週間取れる人」と「翌日仕事の人」で攻め方が変わる。痛み耐性・過去の施術歴もヒアリングして最適化</td>
+            <td>「自分の生活に合わせたプランを組んでくれる」安心感</td>
+          </tr>
+          <tr>
+            <td>05</td>
+            <td><strong>施術解説（各治療の役割 × レイヤー図解）</strong><br>サブシジョン＝深部の癒着切断、キュアジェット＝中層ジェット処理、CO2レーザー＝表面再構築、エクソソーム＝回復ブースト</td>
+            <td>論理的に「なぜこの組み合わせか」を理解させる</td>
+          </tr>
+          <tr>
+            <td>06</td>
+            <td><strong>ビフォーアフター（クレーター特化）</strong><br>凹凸がフラットになった写真 + VISIA数値比較 2〜3例</td>
+            <td>「ここまで治るのか」の衝撃</td>
+          </tr>
+          <tr>
+            <td>07</td>
+            <td><strong>ダウンタイムの正直な開示</strong><br>施術ごとのDT日数表 + 実際の経過写真（Day1→Day3→Day7）</td>
+            <td>覚悟を持っている人に正直に伝えることで信頼獲得</td>
+          </tr>
+          <tr>
+            <td>08</td>
+            <td><strong>治療スケジュール &amp; ゴール</strong><br>6〜12ヶ月のロードマップ。○回目でここまで改善の目安</td>
+            <td>「いつ治るか」の見通し。最大の不安解消</td>
+          </tr>
+          <tr>
+            <td>09</td>
+            <td><strong>口コミ・体験者の声</strong><br>「もっと早くやればよかった」「他で治らなかったのが治った」系</td>
+            <td>同じ経験者からの証言</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td><strong>料金（総額明示 &amp; 追加費用なし保証）</strong><br>「ゴールまでの総額を最初に全て提示します」</td>
+            <td>「追加でいくらかかるか分からない」不安の完全排除</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td><strong>医師紹介 &amp; 症例数</strong></td>
+            <td>クレーター治療は医師の技量が重要。権威性の担保</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td><strong>Q&amp;A</strong><br>痛み、仕事復帰、効果が出なかった場合、途中変更</td>
+            <td>残った不安の解消</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td><strong>CTA：「あなたの凹みの深さと最適な治し方を、無料で診断」</strong><br>診断書ビジュアル + LINE予約 or Web予約。「診断書を持ち帰って検討してもOK」</td>
+            <td>PKG1と同じく「診断書をもらう」ノーリスクCTA。経験者は「正確な診断」に最も価値を感じる</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="concept-box" style="border:2px solid var(--accent);">
+    <h3>CTA設計：「あなた専用のオーダーメイド診断書」を無料プレゼント</h3>
+    <p style="font-size:14px;margin-bottom:20px;">
+      CTAは「パッケージ申込」ではなく、<strong>「無料VISIA診断 + あなただけの診断書＆ゴールデンプランをプレゼント」</strong>。<br>
+      診断書のビジュアルをLP上に見せることで、「自分のも欲しい」という欲求を引き出す。
+    </p>
+
+    <h4 style="font-size:14px;margin-bottom:12px;">「オーダーメイド診断書」に含める3軸</h4>
+    <div class="group-grid">
+      <div class="group-box" style="border-top:3px solid var(--accent);">
+        <h4>軸1：肌データ（VISIA 8項目）</h4>
+        <ul>
+          <li>シミ / 隠れジミ / 毛穴 / シワ</li>
+          <li>キメ / 赤み・色ムラ / ポルフィリン</li>
+          <li>メラニン・ヘモグロビン分離</li>
+          <li>→ <strong>同世代平均と比較したスコア</strong></li>
+          <li>→ 毛穴タイプの判別（詰まり/黒ずみ/開き/たるみ）</li>
+          <li>→ シミ vs 肝斑の判別（施術禁忌の回避）</li>
+        </ul>
+      </div>
+      <div class="group-box" style="border-top:3px solid var(--orange);">
+        <h4>軸2：パーソナル条件</h4>
+        <ul>
+          <li><strong>ダウンタイム許容度</strong><br>「翌日仕事OK？」「週末だけ？」「1週間休める？」</li>
+          <li><strong>痛みの耐性</strong><br>弱い→エリシスセンス / 普通→ポテンツァ / 覚悟あり→ブレッシング</li>
+          <li><strong>予算感</strong><br>月額or総額でのイメージ</li>
+          <li><strong>ゴール設定</strong><br>「ノーファンデで外出」「クレーターをフラットに」等</li>
+          <li><strong>過去の施術歴</strong><br>何を試して、何が効かなかったか</li>
+        </ul>
+      </div>
+      <div class="group-box" style="border-top:3px solid var(--green);">
+        <h4>軸3：医師の専門判断</h4>
+        <ul>
+          <li>肌データ × パーソナル条件を総合判断</li>
+          <li>施術の選定（機器・薬剤まで指定）</li>
+          <li>施術順序の設計（前処置→メイン→仕上げ）</li>
+          <li>通院スケジュール案</li>
+          <li>→ <strong>「あなたのゴールデンプラン」として1枚にまとめる</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flow" style="margin-top:20px;">
+      <div class="flow-step" style="background:#f8f6f3;">
+        <div class="step-num">LP上</div>
+        <div class="step-title">診断書サンプルを見せる</div>
+        <div class="step-desc">「こんな診断書がもらえます」<br>ビジュアルで好奇心を刺激</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="background:#f5f0eb;">
+        <div class="step-num">CTA</div>
+        <div class="step-title">無料VISIA診断を予約</div>
+        <div class="step-desc">「あなただけの診断書＆<br>ゴールデンプランを無料で」</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="background:#f0ede8;">
+        <div class="step-num">来院</div>
+        <div class="step-title">VISIA + カウンセリング</div>
+        <div class="step-desc">肌データ + DT許容度 +<br>痛み耐性 + 予算をヒアリング</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="background:#ebe6df;border:2px solid var(--accent);">
+        <div class="step-num">OUTPUT</div>
+        <div class="step-title">診断書＆ゴールデンプラン</div>
+        <div class="step-desc">あなた専用の処方箋。<br>持ち帰って検討してもOK</div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:20px;">
+      <strong>なぜこのCTAが強いか</strong>
+      1. <strong>「診断書をもらう」は無料＆ノーリスク</strong>。パッケージ契約へのハードルが圧倒的に低い<br>
+      2. <strong>「持ち帰って検討してもOK」</strong>で売りつけ感をゼロにする。コース契約への警戒心（特商法以降の課題）を完全に回避<br>
+      3. <strong>診断書が「比較検討の基準」になる</strong>。他院を検討しても「この診断書の内容を超える提案」がなければ戻ってくる<br>
+      4. <strong>LP上の診断書ビジュアル</strong>が「自分のも欲しい」を引き出す。Instagram的なシェア欲求にもつながる<br>
+      5. 銀座の美容皮膚科で「まず診断」CTAで獲得単価80,000円→13,000円に改善した実績あり
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="strategy-block">
+    <h3>その他の勝ち筋</h3>
+
+    <div class="point">
+      <div class="point-title">1. 「パッケージ」ではなく「処方」と表現する</div>
+      <div class="point-body">「パッケージ」という言葉はセット販売=売りつけのイメージがある（特商法の影響で警戒心が強い）。「あなたの肌に合わせた処方」「オーダーメイドプロトコル」等の表現に変えるだけで、印象が「商品」から「医療」に変わる。</div>
+    </div>
+
+    <div class="point">
+      <div class="point-title">2. 人気施術の効果を「爆上げする」相乗効果を訴求する</div>
+      <div class="point-body">「ポテンツァ単体」ではなく「なぜこの順番で受けると効果が2〜3倍変わるのか」を論理的に説明する。ハイドラで毛穴洗浄→ポテンツァでRF→ジュベルック導入→ケアシス鎮静。各ステップに理由がある。</div>
+    </div>
+
+    <div class="point">
+      <div class="point-title">3. 次世代機器の選択肢で差別化する</div>
+      <div class="point-body">ポテンツァだけでなくエリシスセンス・ブレッシングも提案できること。PKG2ではサブシジョン+キュアジェットの組み合わせ。「診断結果に基づいて最適な機器まで選定する」と伝えることで、他院との決定的な差になる。</div>
+    </div>
+
+    <div class="point">
+      <div class="point-title">4. VISIAのビフォーアフターを「数値」で見せる</div>
+      <div class="point-body">写真のビフォーアフターは「加工疑惑」がつきまとう。VISIAの数値（毛穴数、シミ面積等）は客観的データとして信頼度が高い。「毛穴数 342 → 187」のような具体数値が最も説得力がある。</div>
+    </div>
+
+    <div class="point">
+      <div class="point-title">5. DT・痛みの正直な開示 = 信頼</div>
+      <div class="point-body">パーソナル条件（DT許容度・痛み耐性）を考慮してプランを組むことを明示する。「無理のないスケジュール」「あなたの生活に合わせた治療計画」。特にPKG2はDTが長い施術が多いため、正直な開示が経験者の信頼を獲得する最大の武器。</div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="section">
+  <h2 class="section-title">出典・参考情報</h2>
+  <div class="card" style="font-size:12px;color:var(--sub);line-height:2;">
+    <strong>口コミプラットフォーム</strong><br>
+    ・トリビュー（tribeau.jp）：各施術口コミ件数・人気チケット・2025年ランキング・2026年トレンド予測<br>
+    ・カンナムオンニ（gangnamunni.com）：ポテンツァ805件+、フラクショナルCO2 6,403件、サブシジョン2,829件、ジュベルック14,067件<br>
+    ・キレイレポ（kireireport.com）：VISIA肌診断99件、ケアシス39件、エクソソーム29件<br>
+    ・ホットペッパービューティー：毛穴洗浄カテゴリ東京2,286件、エレクトロポレーション口コミ多数<br>
+    <br>
+    <strong>価格・ランキング情報</strong><br>
+    ・マイベスト：ポテンツァ/ハイドラフェイシャル料金相場<br>
+    ・キレイパスbyGMO：2025年上半期美容医療人気ランキング / 2026年トレンド予測<br>
+    ・各クリニック公式サイト：高須クリニック、品川美容外科、TCB、リゼクリニック他<br>
+    <br>
+    <strong>市場データ</strong><br>
+    ・PR TIMES：トリビュー 2025年人気施術ランキング・2026年トレンド予測発表<br>
+    ・美容ヒフコ：美容医療の不安アンケート（抵抗68.9%、怖い68.8%）<br>
+    ・美容整形経験者調査：約7割がクリニック選びに後悔、約8割が継続希望<br>
+    ・squadbeyond：美容クリニック集客成功事例（獲得単価80,000→13,000円）
+  </div>
+</section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>クレーター・ニキビ跡治療 | Tクリニック</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--white:#fff;--light:#f9f9f9;--accent:#3d6b56;--accent-bg:rgba(61,107,86,.06);--text:#111;--text-mid:#333;--text-sub:#555;--text-light:#888;--border:rgba(0,0,0,.1)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--white);color:var(--text);line-height:1.8;max-width:430px;margin:0 auto;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.header{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.header-logo{font-size:16px;font-weight:600;letter-spacing:1px}
+.header-cta{background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:8px 18px;border-radius:8px;text-decoration:none}
+.img-slot{width:100%;overflow:hidden;background:#e8e5e2;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text-light);font-size:11px;text-align:center;padding:20px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--accent);color:#fff;font-size:15px;font-weight:700;padding:18px;border-radius:10px;text-decoration:none;box-shadow:0 4px 20px rgba(90,122,106,.2)}
+.btn::after{content:'→';font-size:14px}
+.sec{padding:40px 24px}
+.sec-light{background:#f9f9f9}
+.sec-dark{background:#2a2a2a;color:#fff}
+.sec-title{font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;line-height:1.6;margin-bottom:16px;color:#111}
+.sec-text{font-size:15px;color:var(--text-mid);line-height:2;margin-bottom:24px}
+.sec-note{font-size:12px;color:var(--text-light);text-align:center;margin-top:8px}
+.fv{padding:0 0 36px}
+.fv-body{padding:24px 24px 0}
+.fv-headline{font-family:'Noto Serif JP',serif;font-size:26px;font-weight:700;line-height:1.6;margin-bottom:14px;color:#111}
+.fv-headline em{font-style:normal;color:var(--accent)}
+.fv-sub{font-size:15px;color:var(--text-mid);line-height:2;margin-bottom:24px}
+.fv-note{text-align:center;font-size:12px;color:var(--text-light);margin-top:10px}
+.empathy-item{font-size:15px;color:var(--text-mid);padding:12px 16px;background:var(--light);border-radius:10px;border:1px solid var(--border);margin-bottom:8px}
+.layer{background:var(--light);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:10px}
+.layer-label{font-size:14px;font-weight:700;color:var(--accent);margin-bottom:2px}
+.layer-desc{font-size:14px;color:var(--text-mid)}
+.ba-card{background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:14px;overflow:hidden;margin-bottom:16px}
+.ba-images{display:grid;grid-template-columns:1fr 1fr}
+.ba-img{min-height:170px;background:#e8e5e2;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px;color:var(--text-light);text-align:center;padding:12px}
+.ba-img:first-child{border-right:1px solid var(--border)}
+.ba-img-label{font-size:10px;font-weight:700;color:var(--accent);background:rgba(255,255,255,.8);padding:3px 10px;border-radius:100px;margin-bottom:4px}
+.ba-info{padding:16px 18px}
+.ba-profile{font-size:14px;font-weight:600;margin-bottom:4px}
+.ba-detail{font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:8px}
+.ba-scores{display:flex;gap:6px;flex-wrap:wrap}
+.ba-score{font-size:11px;font-weight:600;color:var(--accent);background:var(--accent-bg);padding:4px 10px;border-radius:100px}
+.ba-voice{margin-top:10px;padding-top:10px;border-top:1px solid var(--border);font-size:14px;color:var(--text-mid);line-height:1.8}
+.plan-card{background:var(--white);border:2px solid var(--accent);border-radius:16px;overflow:hidden;margin:24px 0}
+.plan-header{background:var(--accent);padding:16px 20px;color:#fff}
+.plan-header h3{font-family:'Noto Serif JP',serif;font-size:17px;font-weight:600;margin-bottom:2px}
+.plan-header p{font-size:12px;opacity:.85}
+.plan-body{padding:20px}
+.plan-step{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text-mid);line-height:1.7}
+.plan-step:last-child{border:none}
+.plan-step-num{font-size:12px;font-weight:700;color:var(--accent);background:var(--accent-bg);width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.plan-step strong{color:var(--text)}
+.plan-price{text-align:center;padding:16px 20px;border-top:1px solid var(--border);background:var(--light)}
+.plan-price .price{font-family:'Noto Serif JP',serif;font-size:28px;font-weight:600;color:var(--accent)}
+.plan-price .price span{font-size:14px;font-weight:400}
+.plan-price .note{font-size:12px;color:var(--text-light);margin-top:4px}
+.flow-item{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--border)}
+.flow-item:last-child{border:none}
+.flow-num{width:32px;height:32px;flex-shrink:0;border:2px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--accent)}
+.flow-body h4{font-size:15px;font-weight:600;margin-bottom:2px}
+.flow-body p{font-size:13px;color:var(--text-sub);line-height:1.8}
+.dt-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:14px}
+.dt-row:last-child{border:none}
+.doctor{border-radius:14px;overflow:hidden;border:1px solid var(--border)}
+.doctor-photo{min-height:220px;background:#e8e5e2;display:flex;align-items:center;justify-content:center;color:var(--text-light);font-size:12px}
+.doctor-info{padding:20px}
+.doctor-name{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:600;margin-bottom:2px}
+.doctor-title{font-size:13px;color:var(--text-sub);margin-bottom:10px}
+.doctor-bio{font-size:13px;color:var(--text-sub);line-height:2}
+.doctor-msg{margin-top:12px;padding-top:12px;border-top:1px solid var(--border);font-size:14px;color:var(--text-mid);line-height:1.8}
+.trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 0}
+.trust-item{background:var(--light);border:1px solid var(--border);border-radius:10px;padding:16px 12px;text-align:center}
+.trust-label{font-size:14px;font-weight:700;margin-bottom:2px}
+.trust-desc{font-size:11px;color:var(--text-sub)}
+.faq-item{padding:16px 0;border-bottom:1px solid var(--border)}
+.faq-q{font-size:15px;font-weight:600;line-height:1.6}
+.faq-a{font-size:14px;color:var(--text-sub);line-height:1.9;margin-top:6px}
+.cta-sec{padding:40px 24px;text-align:center;background:var(--light)}
+.cta-title{font-family:'Noto Serif JP',serif;font-size:21px;font-weight:600;line-height:1.7;margin-bottom:12px}
+.cta-desc{font-size:14px;color:var(--text-sub);line-height:2;margin-bottom:24px}
+.cta-badges{display:flex;justify-content:center;gap:6px;margin-top:12px;flex-wrap:wrap}
+.cta-badge{font-size:11px;font-weight:600;color:var(--accent);background:#fff;padding:4px 12px;border-radius:100px;border:1px solid var(--border)}
+.fixed-cta{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:99;background:rgba(255,255,255,.96);border-top:1px solid var(--border);padding:10px 20px 14px;display:flex;gap:10px}
+.fixed-cta-main{flex:1;display:flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;font-size:14px;font-weight:700;padding:14px;border-radius:10px;text-decoration:none}
+.fixed-cta-tel{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border:2px solid var(--accent);color:var(--accent);border-radius:50%;text-decoration:none;font-size:16px;flex-shrink:0}
+.footer{padding:20px 24px 100px;text-align:center;font-size:11px;color:var(--text-light);line-height:2}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-logo">T CLINIC</div>
+  <a href="#cta" class="header-cta">無料診断を予約</a>
+</header>
+
+<!-- FV -->
+<section class="fv">
+  <div class="img-slot" style="min-height:240px;padding-top:70px;">
+    クレーターのB/A。凹凸→滑らか。<br>信頼感のあるトーン。
+  </div>
+  <div class="fv-body">
+    <h1 class="fv-headline">
+      <em>もう隠さなくていい</em>肌へ。<br>
+      あなたのクレーターに合わせた<br>
+      治療プランを、専門医が設計。
+    </h1>
+    <p class="fv-sub">
+      VISIA肌診断 × あなたの生活に合わせて、<br>
+      専門医がオリジナル治療プランを設計。
+    </p>
+    <a href="#cta" class="btn">無料クレーター診断を予約する</a>
+    <p class="fv-note">VISIA肌診断（通常¥5,000）+ プラン設計<br><strong style="color:var(--accent);">初めての方限定 無料</strong></p>
+  </div>
+</section>
+
+<!-- 課題・悩み -->
+<section class="sec sec-light">
+  <h2 class="sec-title">治らなかったのは、<br>あなたのせいじゃない。</h2>
+  <div class="empathy-item">ダーマペンを何回やっても凹みは変わらなかった</div>
+  <div class="empathy-item">「肌質だから仕方ない」と言われた</div>
+  <div class="empathy-item">至近距離で見られるのが怖い</div>
+  <p style="font-size:15px;color:var(--text-mid);margin-top:20px;">
+    クレーターの原因は肌の表面ではなく<br><strong>真皮の奥の癒着</strong>。<br>
+    表面の施術では届いていなかった可能性があります。
+  </p>
+</section>
+
+<!-- What：深さ別アプローチ -->
+<section class="sec">
+  <h2 class="sec-title">深さが違えば、治し方も違う。</h2>
+
+  <div class="img-slot" style="min-height:160px;border-radius:10px;margin-bottom:20px;">
+    肌の断面図。表面→中層→深層。<br>「ダーマペンはここまで」「原因はここ」
+  </div>
+
+  <div class="layer">
+    <div class="layer-label">表面</div>
+    <div class="layer-desc">すり鉢毛穴 → キュアジェット / CO2フラクショナル</div>
+  </div>
+  <div class="layer">
+    <div class="layer-label">中層</div>
+    <div class="layer-desc">ボックスカー型 → ポテンツァ / エリシスセンス</div>
+  </div>
+  <div class="layer">
+    <div class="layer-label">深層</div>
+    <div class="layer-desc">癒着のあるクレーター → サブシジョン / ブレッシング</div>
+  </div>
+
+  <p style="font-size:15px;color:var(--text-mid);text-align:center;margin-top:20px;">
+    どの深さにどの施術を、どの順番で。<br>
+    <strong style="color:var(--text);">それを診断から設計します。</strong>
+  </p>
+</section>
+
+<!-- VISIA -->
+<section class="sec sec-light">
+  <h2 class="sec-title">ただの診察じゃない。<br>VISIA肌診断とは。</h2>
+
+  <div class="img-slot" style="min-height:180px;border-radius:10px;margin-bottom:20px;">
+    VISIA診断を受けている様子。<br>画面にクレーターの深さデータ。
+  </div>
+
+  <p class="sec-text" style="margin-bottom:16px;">
+    世界10万人以上のデータベースと比較し、<br>
+    あなたの肌を8項目で数値化する<br>
+    医療レベルの肌解析システム。
+  </p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;">
+    <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+      <div style="font-size:14px;font-weight:700;color:var(--accent);margin-bottom:2px;">凹みの深さ・タイプ</div>
+      <div style="font-size:12px;color:var(--text-sub);">すり鉢/ボックスカー/<br>ローリング/アイスピック</div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+      <div style="font-size:14px;font-weight:700;color:var(--accent);margin-bottom:2px;">癒着の有無</div>
+      <div style="font-size:12px;color:var(--text-sub);">表面処理で届くか<br>深層アプローチが必要か</div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+      <div style="font-size:14px;font-weight:700;color:var(--accent);margin-bottom:2px;">肌年齢・キメ</div>
+      <div style="font-size:12px;color:var(--text-sub);">同年代と比較した<br>あなたの肌の現在地</div>
+    </div>
+    <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;">
+      <div style="font-size:14px;font-weight:700;color:var(--accent);margin-bottom:2px;">瘢痕度合い</div>
+      <div style="font-size:12px;color:var(--text-sub);">クレーターの状態を<br>スコアで客観的に把握</div>
+    </div>
+  </div>
+
+  <p style="font-size:14px;color:var(--text-mid);text-align:center;line-height:1.9;">
+    <strong>目で見ても、触ってもわからないことが、<br>数値でわかる。</strong><br>
+    だから正しい治療が選べる。
+  </p>
+</section>
+
+<!-- B/A -->
+<section class="sec sec-light">
+  <h2 class="sec-title">原因がわかったから、<br>ここまで変わった。</h2>
+
+  <div class="ba-card">
+    <div class="ba-images">
+      <div class="ba-img"><div class="ba-img-label">BEFORE</div>深いクレーター。<br>頬に複数の凹み。</div>
+      <div class="ba-img"><div class="ba-img-label">AFTER</div>凹みがフラットに。</div>
+    </div>
+    <div class="ba-info">
+      <div class="ba-profile">27歳 男性 / ローリング型・癒着あり</div>
+      <div class="ba-detail"><strong style="color:var(--accent);">プラン：</strong>サブシジョン+HA → CO2×3 → エクソソーム+鎮静マスク</div>
+      <div class="ba-scores"><span class="ba-score">毛穴 134→62</span><span class="ba-score">キメ 下位18%→上位45%</span></div>
+      <div class="ba-voice">「10年悩んできた。もっと早く来ればよかった。」</div>
+    </div>
+  </div>
+
+  <div class="ba-card">
+    <div class="ba-images">
+      <div class="ba-img"><div class="ba-img-label">BEFORE</div>ボックスカー型。<br>角ばった凹み。</div>
+      <div class="ba-img"><div class="ba-img-label">AFTER</div>凹凸が緩和。</div>
+    </div>
+    <div class="ba-info">
+      <div class="ba-profile">32歳 女性 / ボックスカー+すり鉢の混合</div>
+      <div class="ba-detail"><strong style="color:var(--accent);">プラン：</strong>キュアジェット×2 → ポテンツァ×ジュベルック → CO2×3</div>
+      <div class="ba-scores"><span class="ba-score">肌年齢 40→33歳</span><span class="ba-score">キメ 下位22%→上位48%</span></div>
+      <div class="ba-voice">「ダーマペン5回で変わらなかった。ここは原因から違った。」</div>
+    </div>
+  </div>
+
+  <div class="ba-card">
+    <div class="ba-images">
+      <div class="ba-img"><div class="ba-img-label">BEFORE</div>アイスピック型。<br>深い点状の凹み。</div>
+      <div class="ba-img"><div class="ba-img-label">AFTER</div>凹みが浅くなった。</div>
+    </div>
+    <div class="ba-info">
+      <div class="ba-profile">25歳 女性 / アイスピック型・深い癒着</div>
+      <div class="ba-detail"><strong style="color:var(--accent);">プラン：</strong>サブシジョン+HA×2 → CO2×4 → エクソソーム+鎮静マスク</div>
+      <div class="ba-scores"><span class="ba-score">毛穴 98→44</span><span class="ba-score">肌年齢 32→25歳</span></div>
+      <div class="ba-voice">「加工なしで写真が撮れるようになった。」</div>
+    </div>
+  </div>
+
+  <p class="sec-note">※ 効果には個人差があります</p>
+</section>
+
+<!-- プラン例 -->
+<section class="sec">
+  <h2 class="sec-title">こんなプランを、あなた専用に設計。</h2>
+
+  <div class="plan-card">
+    <div class="plan-header">
+      <h3>凹凸リセット！クレーター・すり鉢毛穴 撲滅プラン</h3>
+      <p>深いクレーターに何年も悩んできた方へ</p>
+    </div>
+    <div class="plan-body">
+      <div class="plan-step">
+        <div class="plan-step-num">1</div>
+        <div><strong>VISIA肌診断</strong><br>クレーターの深さと瘢痕度合いを測定</div>
+      </div>
+      <div class="plan-step">
+        <div class="plan-step-num">2</div>
+        <div><strong>サブシジョン + ヒアルロン酸注入</strong><br>皮下の癒着を針で切り離し、ヒアルロン酸で持ち上げる</div>
+      </div>
+      <div class="plan-step">
+        <div class="plan-step-num">3</div>
+        <div><strong>CO2フラクショナルレーザー</strong><br>表面の凹凸を削り、新しい肌の再生を促す</div>
+      </div>
+      <div class="plan-step">
+        <div class="plan-step-num">4</div>
+        <div><strong>高濃度エクソソーム + 鎮静ハイドロゲルマスク</strong><br>DTを極限まで短縮し、細胞の修復をブーストさせる</div>
+      </div>
+    </div>
+    <div class="plan-price">
+      <div class="price"><span>月々 </span>¥16,500<span>〜</span></div>
+      <div class="note">※ 総額¥398,000〜 / 分割24回の場合 / 内容により変動</div>
+    </div>
+  </div>
+
+  <p style="font-size:14px;color:var(--text-mid);text-align:center;line-height:1.9;">
+    癒着を切る → 表面を削る → 回復をブースト。<br>
+    <strong>優しいピーリングでは治らない。<br>だからこの組み合わせ。</strong>
+  </p>
+</section>
+
+<!-- RTB：DT -->
+<section class="sec sec-dark">
+  <h2 class="sec-title" style="color:#fff;">DTはあります。<br>でもゴールは見えます。</h2>
+  <div class="dt-row"><span>サブシジョン</span><span>3〜7日</span></div>
+  <div class="dt-row"><span>CO2フラクショナル</span><span>3〜7日</span></div>
+  <div class="dt-row"><span>ポテンツァ</span><span>2〜5日</span></div>
+  <p style="font-size:13px;color:rgba(255,255,255,.7);text-align:center;margin-top:16px;">DT許容度に合わせてプランを調整します。</p>
+</section>
+
+<!-- RTB：Doctor -->
+<section class="sec">
+  <h2 class="sec-title">クレーター治療<br>症例○,○○○件以上の専門医。</h2>
+  <div class="doctor">
+    <div class="doctor-photo">※ 医師写真</div>
+    <div class="doctor-info">
+      <div class="doctor-name">※ 医師名</div>
+      <div class="doctor-title">Tクリニック 院長 / 皮膚科専門医</div>
+      <div class="doctor-bio">○○大学医学部卒業<br>ニキビ跡・クレーター治療 症例○,○○○件以上</div>
+      <div class="doctor-msg">「クレーターは治せます。まず原因を一緒に確認しましょう。」</div>
+    </div>
+  </div>
+</section>
+
+<!-- Flow -->
+<section class="sec sec-light">
+  <h2 class="sec-title">だからTクリニックは、<br>あなた専用の治療プランを設計。</h2>
+
+  <div class="flow-item">
+    <div class="flow-num">1</div>
+    <div class="flow-body">
+      <h4>VISIA診断で深さ・タイプを特定</h4>
+      <p>凹みの深さ、癒着の有無、タイプを数値化。</p>
+    </div>
+  </div>
+  <div class="flow-item">
+    <div class="flow-num">2</div>
+    <div class="flow-body">
+      <h4>専門医がオリジナルプランを設計</h4>
+      <p>DT・痛み耐性・予算も踏まえて最適な組み合わせを設計。</p>
+    </div>
+  </div>
+  <div class="flow-item">
+    <div class="flow-num">3</div>
+    <div class="flow-body">
+      <h4>オリジナルプランをプレゼント</h4>
+      <p>内容・回数・費用をすべて記載。持ち帰りOK。</p>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;padding:18px;background:#fff;border-radius:10px;border:1px solid var(--border);text-align:center;">
+    <p style="font-size:13px;color:var(--text-sub);">通常¥5,000のVISIA肌診断 + プラン設計</p>
+    <p style="font-family:'Noto Serif JP',serif;font-size:24px;font-weight:600;color:var(--accent);">初めての方限定、<span style="font-size:28px;">無料</span></p>
+    <p style="font-size:12px;color:var(--text-light);">約30分 / その場で決める必要なし</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec">
+  <h2 class="sec-title">よくあるご質問</h2>
+  <div class="faq-item">
+    <div class="faq-q">ダーマペンで効果なかったけど、本当に治る？</div>
+    <div class="faq-a">タイプによってはダーマペンでは届きません。まず原因と深さを特定します。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">完全にフラットになる？</div>
+    <div class="faq-a">深さにより改善度は異なります。正直にお伝えし、最大限の改善を目指します。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">費用の総額は？</div>
+    <div class="faq-a">プランにすべて明記。ゴールまでの総額を最初にお伝えします。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">診断だけで帰ってもいい？</div>
+    <div class="faq-a">もちろん。プランを持ち帰ってゆっくり検討してください。</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec" id="cta">
+  <h2 class="cta-title">もう隠さなくていい肌へ。<br>まず、原因を知ることから。</h2>
+  <p class="cta-desc">
+    通常¥5,000のVISIA診断 + プラン設計。<br>
+    <strong style="color:var(--accent);">初めての方は、すべて無料。</strong>
+  </p>
+  <a href="#" class="btn">無料クレーター診断を予約する</a>
+  <div class="cta-badges"><span class="cta-badge">無料</span><span class="cta-badge">勧誘なし</span><span class="cta-badge">約30分</span><span class="cta-badge">持ち帰りOK</span></div>
+</section>
+
+<footer class="footer">T CLINIC<br>※ 効果には個人差があります</footer>
+<div class="fixed-cta">
+  <a href="#cta" class="fixed-cta-main">無料クレーター診断を予約</a>
+  <a href="tel:0000000000" class="fixed-cta-tel">&#9742;</a>
+</div>
+</body>
+</html>
