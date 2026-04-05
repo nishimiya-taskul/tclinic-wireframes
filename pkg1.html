@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <title>韓国陶器肌フルコース | Tクリニック</title>
 <style>
-:root{--white:#fff;--light:#f7f7f7;--gold:#c6a24a;--gold-dark:#a6852a;--pink:#e8837c;--text:#111;--text-mid:#222;--text-sub:#444;--text-light:#777;--border:rgba(0,0,0,.08)}
+:root{--white:#fff;--light:#faf7f8;--gold:#d1638a;--gold-dark:#a8436c;--gold-grad:linear-gradient(135deg,#ff9a7b 0%,#e85a8c 50%,#a54b9e 100%);--gold-grad-gloss:linear-gradient(135deg,#ffb896 0%,#f47ba6 30%,#d1638a 60%,#a54b9e 100%);--pink:#e8837c;--text:#111;--text-mid:#222;--text-sub:#444;--text-light:#777;--border:rgba(0,0,0,.08)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{font-size:16px;scroll-behavior:smooth}
 body{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;background:var(--white);color:var(--text);line-height:1.8;max-width:430px;margin:0 auto;overflow-x:hidden;-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
@@ -14,11 +14,15 @@ h1,h2,h3,h4,.sec-title,.fv-headline,.cta-title{word-break:auto-phrase}
 p,div{word-break:normal;overflow-wrap:break-word}
 .header{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
 .header-logo{font-size:18px;font-weight:700;color:var(--gold-dark);letter-spacing:2px}
-.header-cta{background:linear-gradient(135deg,#4CAF50,#45a049);color:#fff;font-size:12px;font-weight:700;padding:10px 20px;border-radius:100px;text-decoration:none;box-shadow:0 2px 8px rgba(76,175,80,.3)}
-.img-slot{width:100%;overflow:hidden;background:repeating-linear-gradient(45deg,#f0f0f0,#f0f0f0 10px,#e8e8e8 10px,#e8e8e8 20px);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text-sub);font-size:11px;text-align:center;padding:20px;border:2px dashed rgba(198,162,74,.3);position:relative;font-weight:500}
+.header-cta{background:var(--gold-grad-gloss);color:#fff;font-size:12px;font-weight:700;padding:10px 20px;border-radius:100px;text-decoration:none;box-shadow:0 2px 8px rgba(209,99,138,.3)}
+.img-slot{width:100%;overflow:hidden;background:repeating-linear-gradient(45deg,#f0f0f0,#f0f0f0 10px,#e8e8e8 10px,#e8e8e8 20px);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text-sub);font-size:11px;text-align:center;padding:20px;border:2px dashed rgba(209,99,138,.3);position:relative;font-weight:500}
 .img-slot::before{content:'📷 画像挿入予定';position:absolute;top:10px;left:10px;font-size:9px;font-weight:700;color:var(--gold-dark);background:#fff;padding:3px 10px;border-radius:100px;letter-spacing:1px}
-.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:linear-gradient(135deg,#4CAF50,#45a049);color:#fff;font-size:17px;font-weight:700;padding:20px;border-radius:100px;text-decoration:none;box-shadow:0 4px 16px rgba(76,175,80,.3);letter-spacing:1px}
-.btn::after{content:'→';font-size:15px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--gold-grad-gloss);color:#fff;font-size:17px;font-weight:700;padding:20px;border-radius:100px;text-decoration:none;box-shadow:0 4px 20px rgba(209,99,138,.35);letter-spacing:1px;position:relative;overflow:hidden}
+.btn::before{content:'';position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.3),transparent);border-radius:100px 100px 0 0;pointer-events:none;z-index:1}
+.btn::after{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);animation:btn-shine 3.5s infinite;pointer-events:none;z-index:2}
+@keyframes btn-shine{0%{left:-100%}100%{left:200%}}
+.btn>span{position:relative;z-index:3;display:flex;align-items:center;gap:8px}
+.btn-arrow{font-size:15px}
 .sec{padding:48px 20px}
 .sec-pearl{background:#fff}
 .sec-light{background:var(--light)}
@@ -34,7 +38,7 @@ p,div{word-break:normal;overflow-wrap:break-word}
 .fv-note{text-align:center;font-size:13px;color:var(--text-sub);margin-top:10px}
 .aspire-grid{display:flex;flex-direction:column;gap:12px;margin:24px 0}
 .aspire-item{display:flex;gap:14px;align-items:center;background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 12px rgba(0,0,0,.04)}
-.aspire-img{width:110px;min-height:110px;flex-shrink:0;background:repeating-linear-gradient(45deg,#f0f0f0,#f0f0f0 8px,#e8e8e8 8px,#e8e8e8 16px);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500;color:var(--text-sub);text-align:center;padding:8px;border:2px dashed rgba(198,162,74,.3);position:relative}
+.aspire-img{width:110px;min-height:110px;flex-shrink:0;background:repeating-linear-gradient(45deg,#f0f0f0,#f0f0f0 8px,#e8e8e8 8px,#e8e8e8 16px);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:500;color:var(--text-sub);text-align:center;padding:8px;border:2px dashed rgba(209,99,138,.3);position:relative}
 .aspire-img::before{content:'📷';position:absolute;top:4px;right:4px;font-size:10px}
 .aspire-text{padding:14px 14px 14px 0}
 .aspire-label{font-size:18px;font-weight:700;margin-bottom:4px;color:#111}
@@ -50,9 +54,9 @@ p,div{word-break:normal;overflow-wrap:break-word}
 .ba-profile{font-size:15px;font-weight:700;margin-bottom:6px;color:#111}
 .ba-detail{font-size:14px;color:var(--text-mid);line-height:1.8;margin-bottom:10px}
 .ba-scores{display:flex;gap:6px;flex-wrap:wrap}
-.ba-score{font-size:12px;font-weight:700;color:var(--gold-dark);background:rgba(198,162,74,.1);padding:5px 12px;border-radius:100px}
+.ba-score{font-size:12px;font-weight:700;color:var(--gold-dark);background:rgba(209,99,138,.1);padding:5px 12px;border-radius:100px}
 .ba-voice{margin-top:12px;padding-top:12px;border-top:1px solid rgba(0,0,0,.06);font-size:15px;color:#111;line-height:1.8;font-weight:500}
-.plan-card{background:#fff;border:3px solid var(--gold);border-radius:20px;overflow:hidden;margin:24px 0;box-shadow:0 4px 24px rgba(198,162,74,.12)}
+.plan-card{background:#fff;border:3px solid var(--gold);border-radius:20px;overflow:hidden;margin:24px 0;box-shadow:0 4px 24px rgba(209,99,138,.12)}
 .plan-header{background:linear-gradient(135deg,var(--gold),var(--gold-dark));padding:20px 24px;color:#fff}
 .plan-header h3{font-size:17px;font-weight:700;margin-bottom:4px;line-height:1.5}
 .plan-header p{font-size:13px;opacity:.85}
@@ -72,7 +76,7 @@ p,div{word-break:normal;overflow-wrap:break-word}
 .flow-body h4{font-size:17px;font-weight:700;margin-bottom:4px;color:#111}
 .flow-body p{font-size:14px;color:var(--text-sub);line-height:1.8}
 .doctor{border-radius:16px;overflow:hidden;border:none;box-shadow:0 4px 24px rgba(0,0,0,.08)}
-.doctor-photo{min-height:240px;background:repeating-linear-gradient(45deg,#f0f0f0,#f0f0f0 10px,#e8e8e8 10px,#e8e8e8 20px);display:flex;align-items:center;justify-content:center;color:var(--text-sub);font-size:12px;font-weight:500;border-bottom:2px dashed rgba(198,162,74,.2);position:relative}
+.doctor-photo{min-height:240px;background:repeating-linear-gradient(45deg,#f0f0f0,#f0f0f0 10px,#e8e8e8 10px,#e8e8e8 20px);display:flex;align-items:center;justify-content:center;color:var(--text-sub);font-size:12px;font-weight:500;border-bottom:2px dashed rgba(209,99,138,.2);position:relative}
 .doctor-photo::before{content:'📷 医師写真';position:absolute;top:12px;left:12px;font-size:10px;font-weight:700;color:var(--gold-dark);background:#fff;padding:4px 12px;border-radius:100px;letter-spacing:1px}
 .doctor-info{padding:24px}
 .doctor-name{font-size:22px;font-weight:700;margin-bottom:4px;color:#111}
@@ -90,10 +94,11 @@ p,div{word-break:normal;overflow-wrap:break-word}
 .cta-title{font-size:22px;font-weight:700;line-height:1.6;margin-bottom:14px;color:#111}
 .cta-desc{font-size:15px;color:var(--text-mid);line-height:2;margin-bottom:28px}
 .cta-badges{display:flex;justify-content:center;gap:8px;margin-top:14px;flex-wrap:wrap}
-.cta-badge{font-size:12px;font-weight:700;color:var(--gold-dark);background:#fff;padding:6px 16px;border-radius:100px;border:2px solid rgba(198,162,74,.2)}
+.cta-badge{font-size:12px;font-weight:700;color:var(--gold-dark);background:#fff;padding:6px 16px;border-radius:100px;border:2px solid rgba(209,99,138,.2)}
 .fixed-cta{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:99;background:rgba(255,255,255,.97);border-top:1px solid rgba(0,0,0,.06);padding:10px 16px 14px;display:flex;gap:10px}
-.fixed-cta-main{flex:1;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#4CAF50,#45a049);color:#fff;font-size:15px;font-weight:700;padding:16px;border-radius:100px;text-decoration:none;box-shadow:0 2px 12px rgba(76,175,80,.25)}
-.fixed-cta-tel{display:flex;align-items:center;justify-content:center;width:50px;height:50px;border:2px solid #4CAF50;color:#4CAF50;border-radius:50%;text-decoration:none;font-size:18px;flex-shrink:0}
+.fixed-cta-main{flex:1;display:flex;align-items:center;justify-content:center;background:var(--gold-grad-gloss);color:#fff;font-size:15px;font-weight:700;padding:16px;border-radius:100px;text-decoration:none;box-shadow:0 2px 12px rgba(209,99,138,.3);position:relative;overflow:hidden}
+.fixed-cta-main::before{content:'';position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.3),transparent);border-radius:100px 100px 0 0;pointer-events:none}
+.fixed-cta-tel{display:flex;align-items:center;justify-content:center;width:50px;height:50px;border:2px solid var(--gold);color:var(--gold);border-radius:50%;text-decoration:none;font-size:18px;flex-shrink:0}
 .footer{padding:20px 20px 100px;text-align:center;font-size:12px;color:var(--text-light);line-height:2}
 </style>
 </head>
@@ -119,7 +124,7 @@ p,div{word-break:normal;overflow-wrap:break-word}
       最先端肌診断機VISIAで徹底分析。<br>
       <strong style="color:var(--gold-dark);">今だけ無料キャンペーン実施中。</strong>
     </p>
-    <a href="#cta" class="btn">無料パーソナル診断を予約する</a>
+    <a href="#cta" class="btn"><span>無料パーソナル診断を予約する<span class="btn-arrow">→</span></span></a>
     <p class="fv-note">通常¥5,000 → <strong style="color:var(--gold-dark);">初めての方限定 0円</strong> / 所要時間 約30分</p>
   </div>
 </section>
@@ -480,7 +485,7 @@ p,div{word-break:normal;overflow-wrap:break-word}
     通常¥5,000のVISIA診断 + プラン設計。<br>
     <strong style="color:var(--gold-dark);">初めての方は、すべて無料。</strong>
   </p>
-  <a href="#" class="btn">無料パーソナル診断を予約する</a>
+  <a href="#" class="btn"><span>無料パーソナル診断を予約する<span class="btn-arrow">→</span></span></a>
   <div class="cta-badges"><span class="cta-badge">無料</span><span class="cta-badge">勧誘なし</span><span class="cta-badge">約30分</span><span class="cta-badge">持ち帰りOK</span></div>
 </section>
 
