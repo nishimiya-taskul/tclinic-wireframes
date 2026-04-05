@@ -8,7 +8,9 @@
 :root{--white:#fff;--light:#f7f7f7;--accent:#3d6b56;--accent-bg:rgba(61,107,86,.06);--text:#111;--text-mid:#222;--text-sub:#444;--text-light:#777;--border:rgba(0,0,0,.08)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{font-size:16px;scroll-behavior:smooth}
-body{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;background:var(--white);color:var(--text);line-height:1.8;max-width:430px;margin:0 auto;overflow-x:hidden;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
+body{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;background:var(--white);color:var(--text);line-height:1.8;max-width:430px;margin:0 auto;overflow-x:hidden;-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
+h1,h2,h3,h4,.sec-title,.fv-headline,.cta-title{word-break:auto-phrase}
+p,div{word-break:normal;overflow-wrap:break-word}
 .header{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
 .header-logo{font-size:18px;font-weight:700;letter-spacing:2px;color:#111}
 .header-cta{background:linear-gradient(135deg,#4CAF50,#45a049);color:#fff;font-size:12px;font-weight:700;padding:10px 20px;border-radius:100px;text-decoration:none;box-shadow:0 2px 8px rgba(76,175,80,.3)}
@@ -50,7 +52,8 @@ body{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;backgrou
 .plan-header h3{font-size:17px;font-weight:700;margin-bottom:4px;line-height:1.5}
 .plan-header p{font-size:13px;opacity:.85}
 .plan-body{padding:24px}
-.plan-step{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:15px;color:var(--text-mid);line-height:1.7}
+.plan-step{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:15px;color:var(--text-mid);line-height:1.7;word-break:auto-phrase}
+.plan-step>div:last-child{flex:1;min-width:0;word-break:auto-phrase;overflow-wrap:anywhere}
 .plan-step:last-child{border:none}
 .plan-step-num{font-size:13px;font-weight:700;color:#fff;background:var(--accent);width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
 .plan-step strong{color:#111;font-weight:700}
