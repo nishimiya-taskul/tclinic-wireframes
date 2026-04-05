@@ -14,7 +14,8 @@ p,div{word-break:normal;overflow-wrap:break-word}
 .header{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
 .header-logo{font-size:18px;font-weight:700;letter-spacing:2px;color:#111}
 .header-cta{background:linear-gradient(135deg,#4CAF50,#45a049);color:#fff;font-size:12px;font-weight:700;padding:10px 20px;border-radius:100px;text-decoration:none;box-shadow:0 2px 8px rgba(76,175,80,.3)}
-.img-slot{width:100%;overflow:hidden;background:#f0f0f0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text-light);font-size:11px;text-align:center;padding:20px}
+.img-slot{width:100%;overflow:hidden;background:repeating-linear-gradient(45deg,#f0f0f0,#f0f0f0 10px,#e8e8e8 10px,#e8e8e8 20px);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text-sub);font-size:11px;text-align:center;padding:20px;border:2px dashed rgba(61,107,86,.3);position:relative;font-weight:500}
+.img-slot::before{content:'📷 画像挿入予定';position:absolute;top:10px;left:10px;font-size:9px;font-weight:700;color:var(--accent);background:#fff;padding:3px 10px;border-radius:100px;letter-spacing:1px}
 .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:linear-gradient(135deg,#4CAF50,#45a049);color:#fff;font-size:17px;font-weight:700;padding:20px;border-radius:100px;text-decoration:none;box-shadow:0 4px 16px rgba(76,175,80,.3);letter-spacing:1px}
 .btn::after{content:'→';font-size:15px}
 .sec{padding:48px 20px}
@@ -36,7 +37,7 @@ p,div{word-break:normal;overflow-wrap:break-word}
 .layer-desc{font-size:15px;color:var(--text-mid)}
 .ba-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;overflow:hidden;margin-bottom:20px;box-shadow:0 2px 16px rgba(0,0,0,.05)}
 .ba-images{display:grid;grid-template-columns:1fr 1fr}
-.ba-img{min-height:180px;background:#f0f0f0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px;color:var(--text-light);text-align:center;padding:12px}
+.ba-img{min-height:180px;background:repeating-linear-gradient(45deg,#f0f0f0,#f0f0f0 10px,#e8e8e8 10px,#e8e8e8 20px);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:var(--text-sub);text-align:center;padding:12px}
 .ba-img:first-child{border-right:1px solid rgba(0,0,0,.06)}
 .ba-img-label{font-size:11px;font-weight:700;color:#fff;padding:4px 14px;border-radius:100px;margin-bottom:6px}
 .ba-img:first-child .ba-img-label{background:#999}
@@ -69,7 +70,8 @@ p,div{word-break:normal;overflow-wrap:break-word}
 .dt-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:15px;font-weight:500}
 .dt-row:last-child{border:none}
 .doctor{border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08)}
-.doctor-photo{min-height:240px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;color:var(--text-light);font-size:12px}
+.doctor-photo{min-height:240px;background:repeating-linear-gradient(45deg,#f0f0f0,#f0f0f0 10px,#e8e8e8 10px,#e8e8e8 20px);display:flex;align-items:center;justify-content:center;color:var(--text-sub);font-size:12px;font-weight:500;border-bottom:2px dashed rgba(61,107,86,.2);position:relative}
+.doctor-photo::before{content:'📷 医師写真';position:absolute;top:12px;left:12px;font-size:10px;font-weight:700;color:var(--accent);background:#fff;padding:4px 12px;border-radius:100px;letter-spacing:1px}
 .doctor-info{padding:24px}
 .doctor-name{font-size:22px;font-weight:700;margin-bottom:4px;color:#111}
 .doctor-title{font-size:14px;color:var(--text-sub);margin-bottom:12px}
@@ -200,9 +202,14 @@ p,div{word-break:normal;overflow-wrap:break-word}
     <h3 style="font-size:20px;font-weight:700;text-align:center;color:#111;line-height:1.6;margin-bottom:24px;">10年後・20年後の肌まで<br>予測できる。</h3>
 
     <div style="background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.04);">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
         <div style="width:40px;height:40px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;font-weight:700;flex-shrink:0;">⏳</div>
         <div style="font-size:16px;font-weight:700;color:#111;">加齢シミュレーション</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:10px;">
+        <div class="img-slot" style="min-height:120px;border-radius:8px;padding:30px 4px 4px;font-size:9px;"><span style="font-weight:700;color:var(--accent);font-size:10px;">NOW</span><br>現在の肌</div>
+        <div class="img-slot" style="min-height:120px;border-radius:8px;padding:30px 4px 4px;font-size:9px;"><span style="font-weight:700;color:var(--accent);font-size:10px;">+10年</span><br>未ケア時</div>
+        <div class="img-slot" style="min-height:120px;border-radius:8px;padding:30px 4px 4px;font-size:9px;"><span style="font-weight:700;color:var(--accent);font-size:10px;">+20年</span><br>未ケア時</div>
       </div>
       <p style="font-size:14px;color:var(--text-sub);line-height:1.8;">
         現在の肌データから、10年後・20年後のあなたの肌を画像で予測。クレーターがどう変化していくかも視覚的に確認できます。
@@ -291,6 +298,14 @@ p,div{word-break:normal;overflow-wrap:break-word}
       <span style="display:inline-block;font-size:10px;background:rgba(255,255,255,.25);padding:3px 10px;border-radius:100px;font-weight:500;margin-bottom:6px;">※仮プラン例</span>
       <h3>凹凸リセット！クレーター・すり鉢毛穴 撲滅プラン</h3>
       <p>深いクレーターに何年も悩んできた方へ</p>
+    </div>
+    <div style="padding:16px;background:#fafafa;border-bottom:1px solid var(--border);">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;">
+        <div class="img-slot" style="min-height:70px;border-radius:6px;padding:22px 2px 2px;font-size:8px;border-width:1px;"><span style="font-weight:700;color:var(--accent);">診断</span></div>
+        <div class="img-slot" style="min-height:70px;border-radius:6px;padding:22px 2px 2px;font-size:8px;border-width:1px;"><span style="font-weight:700;color:var(--accent);">深層</span></div>
+        <div class="img-slot" style="min-height:70px;border-radius:6px;padding:22px 2px 2px;font-size:8px;border-width:1px;"><span style="font-weight:700;color:var(--accent);">表面</span></div>
+        <div class="img-slot" style="min-height:70px;border-radius:6px;padding:22px 2px 2px;font-size:8px;border-width:1px;"><span style="font-weight:700;color:var(--accent);">回復</span></div>
+      </div>
     </div>
     <div class="plan-body">
       <div class="plan-step">
