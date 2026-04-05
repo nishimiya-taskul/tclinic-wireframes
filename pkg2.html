@@ -8,7 +8,7 @@
 :root{--white:#fff;--light:#f7f7f7;--accent:#3d6b56;--accent-bg:rgba(61,107,86,.06);--text:#111;--text-mid:#222;--text-sub:#444;--text-light:#777;--border:rgba(0,0,0,.08)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{font-size:16px;scroll-behavior:smooth}
-body{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;background:var(--white);color:var(--text);line-height:1.8;max-width:430px;margin:0 auto;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;background:var(--white);color:var(--text);line-height:1.8;max-width:430px;margin:0 auto;overflow-x:hidden;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
 .header{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
 .header-logo{font-size:18px;font-weight:700;letter-spacing:2px;color:#111}
 .header-cta{background:linear-gradient(135deg,#4CAF50,#45a049);color:#fff;font-size:12px;font-weight:700;padding:10px 20px;border-radius:100px;text-decoration:none;box-shadow:0 2px 8px rgba(76,175,80,.3)}
@@ -18,13 +18,13 @@ body{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;backgrou
 .sec{padding:48px 20px}
 .sec-light{background:var(--light)}
 .sec-dark{background:#1a1a1a;color:#fff}
-.sec-title{font-size:26px;font-weight:700;line-height:1.55;margin-bottom:20px;color:#111}
+.sec-title{font-size:22px;font-weight:700;line-height:1.55;margin-bottom:20px;color:#111}
 .sec-title em{color:var(--accent);font-style:normal}
 .sec-text{font-size:16px;color:var(--text-mid);line-height:2;margin-bottom:28px}
 .sec-note{font-size:12px;color:var(--text-light);text-align:center;margin-top:8px}
 .fv{padding:0 0 36px;background:#fff}
 .fv-body{padding:28px 20px 0}
-.fv-headline{font-size:24px;font-weight:700;line-height:1.5;margin-bottom:14px;color:#111}
+.fv-headline{font-size:22px;font-weight:700;line-height:1.5;margin-bottom:14px;color:#111}
 .fv-headline em{font-style:normal;color:var(--accent)}
 .fv-sub{font-size:16px;color:var(--text-mid);line-height:2;margin-bottom:24px}
 .fv-note{text-align:center;font-size:13px;color:var(--text-sub);margin-top:10px}
@@ -47,7 +47,7 @@ body{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;backgrou
 .ba-voice{margin-top:12px;padding-top:12px;border-top:1px solid rgba(0,0,0,.06);font-size:15px;color:#111;line-height:1.8;font-weight:500}
 .plan-card{background:#fff;border:3px solid var(--accent);border-radius:20px;overflow:hidden;margin:24px 0;box-shadow:0 4px 24px rgba(61,107,86,.1)}
 .plan-header{background:var(--accent);padding:20px 24px;color:#fff}
-.plan-header h3{font-size:20px;font-weight:700;margin-bottom:4px}
+.plan-header h3{font-size:17px;font-weight:700;margin-bottom:4px;line-height:1.5}
 .plan-header p{font-size:13px;opacity:.85}
 .plan-body{padding:24px}
 .plan-step{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:15px;color:var(--text-mid);line-height:1.7}
@@ -80,7 +80,7 @@ body{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;backgrou
 .faq-q{font-size:16px;font-weight:700;line-height:1.6;color:#111}
 .faq-a{font-size:15px;color:var(--text-sub);line-height:1.9;margin-top:8px}
 .cta-sec{padding:48px 20px;text-align:center;background:var(--light)}
-.cta-title{font-size:24px;font-weight:700;line-height:1.6;margin-bottom:14px;color:#111}
+.cta-title{font-size:22px;font-weight:700;line-height:1.6;margin-bottom:14px;color:#111}
 .cta-desc{font-size:15px;color:var(--text-mid);line-height:2;margin-bottom:28px}
 .cta-badges{display:flex;justify-content:center;gap:8px;margin-top:14px;flex-wrap:wrap}
 .cta-badge{font-size:12px;font-weight:700;color:var(--accent);background:#fff;padding:6px 16px;border-radius:100px;border:2px solid rgba(61,107,86,.15)}
@@ -104,8 +104,7 @@ body{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;backgrou
   </div>
   <div class="fv-body">
     <h1 class="fv-headline">
-      あなた専用の<br>
-      <em>クレーター治療プラン</em>を、<br>
+      あなた専用の<em>クレーター治療プラン</em>を、<br>
       専門医が設計。
     </h1>
     <p class="fv-sub">
@@ -245,7 +244,8 @@ body{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;backgrou
 
   <div class="plan-card">
     <div class="plan-header">
-      <h3>凹凸リセット！クレーター・すり鉢毛穴 撲滅プラン <span style="font-size:11px;background:rgba(255,255,255,.25);padding:2px 8px;border-radius:100px;font-weight:400;margin-left:4px;">※仮プラン例</span></h3>
+      <span style="display:inline-block;font-size:10px;background:rgba(255,255,255,.25);padding:3px 10px;border-radius:100px;font-weight:500;margin-bottom:6px;">※仮プラン例</span>
+      <h3>凹凸リセット！クレーター・すり鉢毛穴 撲滅プラン</h3>
       <p>深いクレーターに何年も悩んできた方へ</p>
     </div>
     <div class="plan-body">
